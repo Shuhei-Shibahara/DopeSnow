@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+ActiveRecord::Base.transaction do
+  User.destroy_all
+
+ puts "Creating users..."
+ ApplicationRecord.connection.reset_pk_sequence!('users')
+
+  Shuhei = User.create!(email: "wipeout@mail.com", name: "Shuhei", password: 'password')
+  
+  10.times do 
+    User.create!({
+      email: Faker::Internet.unique.email,
+      name: Faker::Internet.unique.username(specifier: 3),
+      password: 'password'
+    }) 
+  end
+  puts 'done'
+end
