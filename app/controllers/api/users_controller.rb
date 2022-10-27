@@ -9,7 +9,8 @@ class Api::UsersController < ApplicationController
       login(@user)
       render :show
     else
-      render @user.errors.full_messages, status: 422
+      render json: { errors: ['The provided credentials were invalid.'] }, 
+      status: :unauthorized    
     end
   end
 
