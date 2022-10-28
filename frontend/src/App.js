@@ -1,22 +1,24 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
+import LoginFormPage from './components/LoginFormPage';
 import Navigation from './components/Navigation';
+import ProfilePage from './components/ProfilePage';
 function App() {
   return (
     <>
-      <h1>Dope Snow</h1>
         <Navigation />
           <Switch>
-            <Route path="/login">
-              <h1>Dope Snow</h1>
+             <Route path="/login" >
               <LoginFormPage />
-            </Route>
+            </Route> 
 
             <Route path="/signup">
-              <h1>Dope Snow</h1>
               <SignupFormPage />
+            </Route>
+
+            <Route path="/profile">
+              <ProfilePage />
             </Route>
           </Switch>
     </>

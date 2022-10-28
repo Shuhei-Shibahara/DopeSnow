@@ -1,0 +1,79 @@
+input {
+  all: unset;
+  font-size: 24px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.outer_container{
+  margin: 93px 0 0 15px !important;
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: center;
+  height: initial;
+}
+
+.title_container{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.signup_div{
+  width: 600px;
+}
+
+.title {
+  position: relative;
+  color: #393c43;
+  font-family: 'Inter', sans-serif;;
+}
+
+.signup_form{
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.signup_form > label{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: hsl(209.06, 99.11%, 44.12%);
+  border-bottom: black 4px solid;
+}
+
+#signup_input{
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  color: #b4bbca;
+}
+
+.login_link{
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+
+.signup_button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(208.94, 100%, 50%) !important;
+    color: hsl(0, 0%, calc(100% - 0%));
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 18px;
+    border-radius: 4px;
+    border: 0;
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+}

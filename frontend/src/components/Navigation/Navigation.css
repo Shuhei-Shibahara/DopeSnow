@@ -1,0 +1,62 @@
+
+.sick_home{
+  display: flex;
+  align-items: center;
+  max-width: 1514px;
+  margin: 0px auto;
+  border-top-left-radius: 10%;
+  user-select: none;
+  position: relative;
+  top: -15px;
+}
+img.logo{
+  height: 40px;
+  width: 92px;
+}
+
+.top_level{
+  background: black;
+}
+
+.upper_top{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  max-width: var(--a);
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.shipping{
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 8px 0;
+  margin-left: 43px;
+}
+
+.dope{
+  display: block;
+  margin-left: 20px;
+}
+.shipping > span{
+  font-size: 14px;
+}
+
+.free{
+  font-weight: 80px;
+}
+
+.header_space{
+  height: 8px;
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* .nav_signup_button{
+  margin: 0;
+  padding: 8px 0 8px 25px;
+  position: relative;
+} */
