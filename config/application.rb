@@ -34,12 +34,14 @@ module DopeSnow
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
+    config.railties_order = [:all, :main_app]
     config.api_only = true
-        config.active_storage.draw_routes = false
-        config.middleware.use ActionDispatch::Cookies
-        config.middleware.use ActionDispatch::Session::CookieStore,
-        key: '_teatime_session',
-        same_site: :lax, 
-        secure: Rails.env.production?
-  end
+    config.active_storage.draw_routes = false
+    
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore,
+      key: '_teatime_session',
+      same_site: :lax, 
+      secure: Rails.env.production?
+    end
 end
