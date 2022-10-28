@@ -16,7 +16,7 @@ function LoginForm() {
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
-    // debugger
+   
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.loginUser({ email, password }))

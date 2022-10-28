@@ -4,7 +4,6 @@ const RECEIVE_USER = "users/RECEIVE_USER";
 const REMOVE_USER = "users/REMOVE_USER";
 
 export const receiveUser = (user) => {
-  // debugger
   return {
     type: RECEIVE_USER,
     user
@@ -19,7 +18,7 @@ export const removeUser = (userId) => {
 };
 
 export const loginUser = (user) => async (dispatch) => {
-  // debugger
+
   const { email, password } = user;
   let res = await csrfFetch("/api/session", {
     method: "POST",
@@ -29,7 +28,7 @@ export const loginUser = (user) => async (dispatch) => {
     }),
   });
   let data = await res.json();
-  // debugger
+
   dispatch(receiveUser(data.user));
   storeCurrentUser(data.user)
   return data;
@@ -85,7 +84,7 @@ const initialState = {
 const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
-      // debugger
+   
       return { ...state, user: action.user }; //{ user:{email:"sdasd", password:"asfasfa"} , }
     case REMOVE_USER:
       return { ...state, user: null };
