@@ -1,20 +1,47 @@
 import csrfFetch from "./csrf"
 
-const SET_PRODUCTS = 'products/SET_PRODUCTS';
-const SET_PRODUCT = 'products/SET_PRODUCT'
+const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
+const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT'
 
-export const setProducts = products => ({
-  type: SET_PRODUCTS,
+export const receiveProducts = products => ({
+  type: RECEIVE_PRODUCTS,
   products
 })
 
-export const setProduct = product => ({
-  type: SET_PRODUCT,
+export const receiveProduct = product => ({
+  type: RECEIVE_PRODUCT,
   product
 })
 
 export const fetchProducts = () => async dispatch => {
-  const res = await csrfFetch(`api/products`)
-  const products = await res.json();
-  dispatch(setProducts(products))
+  const res = await csrfFetch(`/api/products`)
+  if (res.ok){
+    const products = await res.json();
+    dispatch(receiveProducts(products))
+  }
 }
+
+export const fetchProduct = (productId) => async dispatch => {
+  const res = await csrfFetch(`/api/products/${productId}`)
+  if (res.ok){
+    const product = await res.json();
+    dispatch(receiveProduct(product))
+  }
+}
+
+export default function productsReducer(state = {}, action){
+  Object.freeze(state);
+  const nextState = {...state};
+
+  switch(action.type){
+    case RECEIVE_PRODUCTS:
+        return {...action.products}
+    case RECEIVE_PRODUCT:
+        return {...nextState, [action.product.id]: action.product}
+    default:
+      return state;
+  }
+}
+
+
+    

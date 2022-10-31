@@ -48,12 +48,86 @@ img.logo{
   font-weight: 80px;
 }
 
+.login_button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: hsl(0, 0%, calc(100% - 0%));
+  line-height: 14px;
+  display: block;
+  padding: 8px 25px;
+  opacity: .8;
+}
+
+.login_button:hover{
+  /* color: white; */
+  opacity: 1.0;
+}
+
+.profile_button{
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: hsl(0, 0%, calc(100% - 0%));
+  line-height: 14px;
+  display: block;
+  padding: 8px 25px;
+  opacity: .8;
+}
+
+.profile_button:hover {
+  /* color: white; */
+  opacity: 1.0;
+}
+
+.profile_dropdown{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.profile_dropdown a{
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  background-color: white;
+  color: hsl(0, 0%, calc(17.65%), 0.8);
+  width: 95.07px;
+  height: 30px;
+  border-bottom: 1px grey solid;
+  border-left: 1px grey solid;
+  border-right: 1px grey solid;
+  
+}
+
+.profile_dropdown a:hover{
+  color: hsl(0, 0%, 17.65%);
+  background-color: lightgrey;
+}
+
+.profile_dropdown :first-child{
+  margin-top: 4px;
+  border-top: 1px grey solid ;
+}
+
+
+
 .header_space{
   height: 8px;
   background: white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+.profile_bar{
+  position: relative
+}
+
+
 
 /* .nav_signup_button{
   margin: 0;

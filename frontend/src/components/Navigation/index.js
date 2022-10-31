@@ -18,8 +18,7 @@ function Navigation() {
     sessionLinks = (
       <>
         <div>
-          {/* <NavLink to="/login"><button class="nav_signup_button"><FaSnowboarding/></button></NavLink> */}
-          <Link to="/login"><FaSnowboarding /></Link>
+          <Link to="/login" className='login_button'>LOG IN</Link>
         </div>
       </>
     );

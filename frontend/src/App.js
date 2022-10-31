@@ -17,7 +17,7 @@ function App() {
               <SignupFormPage />
             </Route>
 
-            <Route path="/profile">
+            <Route path="/cart">
               <ProfilePage />
             </Route>
           </Switch>

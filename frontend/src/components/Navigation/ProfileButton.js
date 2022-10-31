@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { FaSnowboarding } from 'react-icons/fa'
 import { Link } from "react-router-dom";
+import './Navigation.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -32,9 +33,15 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button>
-        <Link to="/profile"><FaSnowboarding /></Link>
-      </button>
+      <div className="profile_bar">
+          <Link to="" className='profile_button' onClick={openMenu}>PROFILE</Link>
+        {showMenu && (
+          <div className="profile_dropdown">
+            <Link to="/cart">CART</Link>
+            <Link to="/" onClick={logout}>LOG OUT</Link>
+          </div>
+        )}
+      </div>
     </>
   );
 }
