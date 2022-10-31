@@ -14,7 +14,7 @@
 #  category    :string           not null
 #
 class Product < ApplicationRecord
-  validates :name, :description, :color, :size, :category, presence: true
+  validates :name, :description, :color, :size, :category, :gender, presence: true
   validates :name, uniqueness: true
 
 

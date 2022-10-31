@@ -13,8 +13,8 @@ export const receiveProduct = product => ({
   product
 })
 
-export const fetchProducts = () => async dispatch => {
-  const res = await csrfFetch(`/api/products`)
+export const fetchProducts = (gender, category) => async dispatch => {
+  const res = await csrfFetch(`/api/products?gender=${gender}&category=${category}`)
   if (res.ok){
     const products = await res.json();
     dispatch(receiveProducts(products))

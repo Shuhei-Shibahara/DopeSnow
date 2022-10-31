@@ -13,6 +13,8 @@ ActiveRecord::Base.transaction do
   puts "Creating users..."
   puts "Creating products..."
  ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('products')
+
 
   Shuhei = User.create!(email: "wipeout@mail.com", name: "Shuhei", password: 'password')
   10.times do 
@@ -32,6 +34,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Pine Metal Blue", "2X-Up Black", "2X-Up Burgundy", "2X-Up Faded Violet"],
     category: "Men's Snowboard Jackets",
+    gender: "M"
   })
 
   product2 = Product.create!({
@@ -41,6 +44,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Olive Green"],
     category: "Men's Snowboard Jackets",
+    gender: "M"
   })
 
   product3 = Product.create!({
@@ -51,6 +55,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Olive Green", "Black", "Burgundy", "Metal Blue"],
     category: "Men's Snowboard Jackets",
+    gender: "M"
   })
 
   product4 = Product.create!({
@@ -61,6 +66,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black", "Olive Green", "Khaki", "Walnut"],
     category: "Men's Snowboard Pants",
+    gender: "M"
   })
 
   product5 = Product.create!({
@@ -71,6 +77,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black Out", "Black", "Olive Green", "Metal Bllue"],
     category: "Men's Snowboard Pants",
+    gender: "M"
   })
   product6 = Product.create!({
     name: "Antek Snowboard Pants Men",
@@ -80,6 +87,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Grey Camo", "Black", "Olive Green", "Sand"],
     category: "Men's Snowboard Pants",
+    gender: "M"
   })
 
   product7 = Product.create!({
@@ -89,6 +97,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black"],
     category: "Men's T-shirts",
+    gender: "M"
   })
 
 
@@ -99,6 +108,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black", "White"],
     category: "Men's T-shirts",
+    gender: "M"
   })
 
   product9 = Product.create!({
@@ -108,6 +118,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black", "White", "Burgundy"],
     category: "Men's T-shirts",
+    gender: "M"
   })
 
   product10 = Product.create!({
@@ -118,6 +129,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black", "Burgundy", "Faded Grape", "Olive Green"],
     category: "Men's Hoddies",
+    gender: "M"
   })
 
   product11 = Product.create!({
@@ -128,6 +140,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black"],
     category: "Men's Hoddies",
+    gender: "M"
   })
 
   product12 = Product.create!({
@@ -137,6 +150,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black", "Faded Grape"],
     category: "Men's Hoddies",
+    gender: "M"
   })
   #Womens
 
@@ -148,6 +162,7 @@ ActiveRecord::Base.transaction do
     size: ["XXS", "XS", "S", "M", "L", "XL"],
     color: ["Pink", "Black", "Olive Green", "Faded Green"],
     category: "Women's Snowboard Jackets",
+    gender: "W"
   })
 
   product14 = Product.create!({
@@ -157,6 +172,8 @@ ActiveRecord::Base.transaction do
     size: ["XXS", "XS", "S", "M", "L", "XL"],
     color: ["Pine Black", "2X-Up Black", "2X-Up Metal Blue", "2X-Up Soft Green"],
     category: "Women's Snowboard Jackets",
+    gender: "W"
+
   })
 
   product15 = Product.create!({
@@ -167,6 +184,8 @@ ActiveRecord::Base.transaction do
     size: ["XXS", "XS", "S", "M", "L", "XL"],
     color: ["Cumulus", "Black", "Olive Green"],
     category: "Women's Snowboard Jackets",
+    gender: "W"
+
   })
 
   product16 = Product.create!({
@@ -177,6 +196,7 @@ ActiveRecord::Base.transaction do
     size: ["XXS","XS", "S", "M", "L", "XL"],
     color: ["Black"],
     category: "Women's Snowboard Pants",
+    gender: "W"
   })
 
   product17 = Product.create!({
@@ -186,6 +206,7 @@ ActiveRecord::Base.transaction do
     size: ["XXS", "XS", "S", "M", "L", "XL"],
     color: ["Black", "Faded Violet", "Soft Green", "Pink"],
     category: "Women's Snowboard Pants",
+    gender: "W"
   })
   product18 = Product.create!({
     name: "Tigress W Snowboard Pants Women",
@@ -195,6 +216,7 @@ ActiveRecord::Base.transaction do
     size: ["XXS", "XS", "S", "M", "L", "XL"],
     color: ["Light Grey", "Black", "Walnut"],
     category: "Women's Snowboard Pants",
+    gender: "W"
   })
 
   product19 = Product.create!({
@@ -204,6 +226,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL"],
     color: ["Black", "White", "Faded Grape"],
     category: "Women's T-shirts",
+    gender: "W"
   })
 
 
@@ -214,6 +237,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL"],
     color: ["Black", "White"],
     category: "Women's T-shirts",
+    gender: "W"
   })
 
   product21 = Product.create!({
@@ -223,6 +247,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL"],
     color: ["Faded Green"],
     category: "Women's T-shirts",
+    gender: "W"
   })
 
   product22 = Product.create!({
@@ -233,16 +258,18 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Black"],
     category: "Women's Hoddies",
+    gender: "W"
   })
 
   product23 = Product.create!({
-    name: "ORegular Rose Hoodie Women",
+    name: "Regular Rose Hoodie Women",
     price: 65.00,
     description: "The Regular Hoodie from Dope is our brand new women-specific fit hoodie with the perfect amount of bagginess and a little extra drop to make it super comfy and cosy with our signature oversized feel. Made from a chunky 100% BCI cotton jersey with a mercerised outer to give it a super smooth and soft handfeel, and a comfy inner for that cosy snugness, the Regular hoodie is everything you ever wanted in a slouchy pullover, and so much more. Material: 100% BCI Cotton, Fabric Weight: 380gsm",
     featured: true,
     size: ["XS", "S", "M", "L", "XL", "XXL"],
     color: ["Bleached Black", "Black"],
     category: "Women's Hoddies",
+    gender: "W"
   })
 
   product24 = Product.create!({
@@ -252,6 +279,7 @@ ActiveRecord::Base.transaction do
     size: ["XS", "S", "M", "L", "XL"],
     color: ["Faded Grape"],
     category: "Women's Hoddies",
+    gender: "W"
   })
 
   puts 'done'
