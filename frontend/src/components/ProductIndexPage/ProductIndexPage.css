@@ -1,3 +1,11 @@
+.product_page_name{
+  font-family: 'Inter', sans-serif;
+}
+
+.product_redirect{
+  font-family: 'Inter', sans-serif;
+}
+
 
 .product_section{
   display: grid;
@@ -69,6 +77,7 @@
   text-overflow: ellipsis;
   width: 100%;
   text-align: center;
+
 }
 
 .product_name_index{

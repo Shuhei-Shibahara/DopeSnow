@@ -1,0 +1,55 @@
+.product_show_outside_container{
+  height: auto !important;
+  display: block;
+  overflow-y: visible;
+  overflow-x: visible;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.product_show_main_container{
+  width: 964px;
+  margin: 0 auto;
+}
+
+.product_show_main{
+  display: block;
+  position: relative;
+  font-weight: 400;
+  margin: 100px auto 0;
+}
+
+.product_page_name{
+  display: inline;
+  font-size: inherit;
+  font-weight: 800;
+}
+
+.product_info_container{
+  position: relative;
+  cursor: grab;
+  transition: .2s;
+  max-width: 964px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.product_image_outer_container{
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  font-size: 0;
+  transform: translateX(-402px);
+  width: 1004px;
+  position: relative;
+  user-select: none;
+  transition: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.inner_container{
+  display: inline-block;
+  width: 502px;
+  margin-right: 0;
+}

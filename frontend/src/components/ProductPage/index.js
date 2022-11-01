@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchProduct } from "../../store/products";
+import './ProductPage.css'
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -12,9 +13,31 @@ const ProductPage = () => {
     dispatch(fetchProduct(id))
   },[dispatch, id])
 
+  if (product === undefined){
+    return null
+  }
   return(
     <>
-      <h1>test</h1>
+      <div className='product_show_outside_container'>
+        <div className='product_show_main_container'>
+          <div className='product_show_main'>
+            <div className="btAX" id="topnav">
+              <Link className="product_redirect" exact to={`/products/${product.gender}/${product.category}`}>{product.category}</Link>
+              &nbsp;<span>&gt;</span>&nbsp;
+              <h1 className="product_page_name">{product.name}</h1>
+            </div>
+            <div className="product_info_positioning">
+              <section className="product_info_container">
+                <div className="product_image_outer_container">
+                  <div className="inner_container">
+
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

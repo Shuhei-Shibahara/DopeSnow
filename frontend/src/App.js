@@ -28,7 +28,7 @@ function App() {
               <ProductIndexPage />
             </Route>
 
-            <Route exact path="/products/:id">
+            <Route exact path="/product/:id">
               <ProductPage />
             </Route>
 
@@ -36,7 +36,7 @@ function App() {
               <ProductIndexPage />
             </Route>
 
-            <Route path="/products/:gender/:category">
+            <Route exact path="/products/:gender/:category">
               <ProductIndexPage />
             </Route>
 
