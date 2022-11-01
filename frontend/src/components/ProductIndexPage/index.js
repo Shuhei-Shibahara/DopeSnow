@@ -8,6 +8,7 @@ export default function ProductIndex(){
   const {gender, category} = useParams();
   const dispatch = useDispatch();
   const products = useSelector(state => Object.values(state.products))
+  
   useEffect(() => {
     dispatch(fetchProducts(gender, category))
   },[dispatch])

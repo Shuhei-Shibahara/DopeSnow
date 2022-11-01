@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from "react";
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import dope from "../../images/dope.png"
+import CategoryDropDown from '../CategoryDropDown';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const [isShown, setIsShown] = useState(false);
 
   let sessionLinks;
   if (sessionUser) {
@@ -40,8 +43,10 @@ function Navigation() {
           <Link exact to="/" className="dope"><img className="logo" src={dope} alt=""/></Link>
           <nav>
             <ol>
-              <Link class="gender_link">Men</Link>
-              <Link class="gender_link">Women</Link>
+              <Link class="gender_link_men">Men</Link>
+                < CategoryDropDown />
+              <Link class="gender_link_women">Women</Link>
+                < CategoryDropDown />
             </ol>
           </nav>
           <div className='right_side_nav_bar'>

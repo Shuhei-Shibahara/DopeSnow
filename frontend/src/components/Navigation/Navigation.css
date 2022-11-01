@@ -149,7 +149,7 @@ img.logo{
   text-align: center;
 }
 
-.gender_link{
+.gender_link_men{
   font-family: 'Inter', sans-serif;
   color: hsl(0, 0%, 17.65%);
   font-size: 17px;
@@ -157,6 +157,16 @@ img.logo{
   margin-right: 13px;
   line-height: 24px;
   }
+
+.gender_link_women {
+  font-family: 'Inter', sans-serif;
+  color: hsl(0, 0%, 17.65%);
+  font-size: 17px;
+  font-weight: 800;
+  margin-right: 13px;
+  line-height: 24px;
+}
+
 
 .right_side_nav_bar{
   display: flex;
