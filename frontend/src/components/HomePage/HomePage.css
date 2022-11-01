@@ -1,0 +1,96 @@
+
+.main_div{
+  overflow-x: initial;
+}
+
+.main_div * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Inter', sans-serif;
+}
+
+.video_container{
+  display: block;
+  max-width: 1530px;
+  margin: auto;
+  position: relative;
+}
+
+.main_container {
+  margin: 40px 43px 0;
+}
+
+#video{
+  object-fit: fill;
+  width: 100%;
+  border-radius: 3px;
+  display: block;
+  height: 600px;
+}
+
+.video_text{
+  background-color: rgba(0, 0, 0, .25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: hsl(0, 0%, 17.65%)
+}
+
+.main_video_text{
+  font-size: 38px;
+  line-height: 46px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.shop_now_button{
+  margin-top: 21px;
+  border-radius: 1px;
+  background-color: hsl(0, 0%, 100%);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 16px;
+  color: var(--p);
+  outline: 0;
+  border: 0;
+  padding: 16px 79px;
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+}
+
+.bottom_text_video{
+  display: block;
+  padding: 15px;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  letter-spacing: 0;
+  position: absolute;
+  bottom: -46px;
+  left: 0;
+  font-size: 13px;
+  line-height: 16px;
+  margin-right: 53px;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+      

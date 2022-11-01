@@ -10,28 +10,28 @@ class Api::ProductsController < ApplicationController
       case params[:gender] 
       when 'M'
         case params[:category]
-        when "Men's Snowboard Jackets"
-          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Men's Snowboard Jackets")
-        when "Men's Snowboard Pants"
-          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Men's Snowboard Pants")
-        when "Men's T-shirts"
-          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Men's T-shirts")
-        when "Men's Hoddies"
-          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Men's Hoddies")
+        when "Mens-Snowboard-Jackets"
+          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Mens-Snowboard-Jackets")
+        when "Mens-Snowboard-Pants"
+          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Mens-Snowboard-Pants")
+        when "Mens-T-shirts"
+          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Mens-T-shirts")
+        when "Mens-Hoddies"
+          @products ||= Product.where("gender = ?", 'M').where("category = ?", "Mens-Hoddies")
         else
           @products ||= Product.where("gender = ?", 'M')
         end
     
       when 'W'
         case params[:category] 
-        when "Women's Snowboard Jackets"
-          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Women's Snowboard Jackets")
-        when "Women's Snowboard Pants"
-          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Women's Snowboard Pants")
-        when "Women's T-shirts"
-          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Women's T-shirts")
-        when "Women's Hoddies"
-          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Women's Hoddies")
+        when "Womens-Snowboard-Jackets"
+          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Womens-Snowboard-Jackets")
+        when "Womens-Snowboard-Pants"
+          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Womens-Snowboard-Pants")
+        when "Womens-T-shirts"
+          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Womens-T-shirts")
+        when "Womens-Hoddies"
+          @products ||= Product.where("gender = ?", 'W').where("category = ?", "Womens-Hoddies")
         else
           @products ||= Product.where("gender = ?", 'W')
         end
