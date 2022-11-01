@@ -174,7 +174,6 @@ img.logo{
   justify-content: center;
   padding-right: 47px;
   gap: 0 10px;
-
   font-family: 'Inter', sans-serif;
   color: hsl(0, 0%, 17.65%);
   font-size: 14px;
@@ -191,3 +190,7 @@ img.logo{
   color: hsl(0, 0%, 17.65%);
 }
 
+
+.gender_button_nav{
+  position: relative;
+}

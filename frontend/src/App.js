@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import ProfilePage from './components/ProfilePage';
 import HomePage from './components/HomePage'
 import ProductIndexPage from './components/ProductIndexPage'
+import ProductPage from './components/ProductPage'
 function App() {
   return (
     <>
@@ -25,6 +26,10 @@ function App() {
 
             <Route exact path="/products">
               <ProductIndexPage />
+            </Route>
+
+            <Route exact path="/products/:id">
+              <ProductPage />
             </Route>
 
             <Route exact path="/products/:gender">

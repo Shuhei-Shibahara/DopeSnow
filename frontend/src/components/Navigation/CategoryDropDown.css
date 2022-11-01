@@ -1,6 +1,6 @@
 
 .drop-down-container{
-  display: block;
+  display: none;
   position: fixed;
   top: 100px;
   z-index: 90;
@@ -9,7 +9,15 @@
   text-align: center;
   box-shadow: 0 -1px 0 #e8e8e8;
   background: 0 0;  
-  color: black
+  color: black;
+  width: 100%;
+}
+
+
+.gender_button_nav>ol{
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .drop-down{
@@ -24,10 +32,17 @@
   transform-origin: top;
   background-color: hsl(0, 0%, 100%);
 }
-
-.gender_link_men:hover + .drop-down{
-  display: block;
+.gender_link_wrapper{
+  height: 30px;
 }
+.gender_link_wrapper:hover .drop-down-container{
+  display: block
+}
+
+/* .gender_link_wrapper:hover .gender_link_men{
+  font-size: 100px;
+} */
+
 
 .drop-down>ol{
   margin: 0;
