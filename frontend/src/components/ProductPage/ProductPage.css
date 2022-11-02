@@ -42,8 +42,6 @@
   transform: translateX(-402px);
   width: 1004px;
   position: relative;
-  user-select: none;
-  transition: none;
   padding-left: 0;
   padding-right: 0;
 }
@@ -52,4 +50,38 @@
   display: inline-block;
   width: 502px;
   margin-right: 0;
+  margin-left: 400px
 }
+
+.change_image_div{
+  border-radius: 3px;
+  overflow: hidden;
+  padding-top: calc(117.675%);
+  position: relative;
+  background-color: hsl(0, 0%, calc(89.02%));
+}
+
+.image_container{
+  width: 502px;
+  height: 590.728px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+}
+
+.main_image{
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  background-color: hsl(0, 0%, calc(89.02%));
+  vertical-align: top !important;
+  height: auto !important;
+  transition: 1s ease-in !important;
+  min-width: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  }

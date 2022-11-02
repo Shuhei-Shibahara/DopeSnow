@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchProduct } from "../../store/products";
+import Sideinfo from "./Sideinfo.js"
 import './ProductPage.css'
 
 const ProductPage = () => {
@@ -30,6 +31,13 @@ const ProductPage = () => {
               <section className="product_info_container">
                 <div className="product_image_outer_container">
                   <div className="inner_container">
+                    <div className="change_image_div">
+                      <div className="image_container">
+                        <img src="https://sick-snow.s3.us-west-2.amazonaws.com/m-yeti-main.png" className="main_image" />
+
+                      </div>
+                      
+                    </div>
 
                   </div>
                 </div>
@@ -38,6 +46,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      <Sideinfo product={product} />
     </>
   )
 }
