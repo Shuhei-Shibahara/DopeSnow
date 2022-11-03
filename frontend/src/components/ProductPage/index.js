@@ -19,6 +19,7 @@ const ProductPage = () => {
   }
   return(
     <>
+      <img src={product.photoUrl} />
       <div className='product_show_outside_container'>
         <div className='product_show_main_container'>
           <div className='product_show_main'>

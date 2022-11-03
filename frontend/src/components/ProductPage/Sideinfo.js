@@ -15,6 +15,7 @@ const Sideinfo = ({product}) => {
   const [pickedSize, setPickedSize] = useState(sizes[2]) 
   const [selectedSize, setSelectedSize] = useState(2)
 
+
   const handleColorChange = (color, i) => (e) => {
     e.preventDefault();
     console.log(color, i)

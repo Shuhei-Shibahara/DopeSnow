@@ -25,7 +25,8 @@ export const fetchProduct = (cartId,productId) => async dispatch => {
   const res = await csrfFetch(`/api/products/${cartId}`)
   if (res.ok){
     const product = await res.json();
-    dispatch(receiveProduct(productId))
+  
+    dispatch(receiveProduct(product))
   }
 }
 

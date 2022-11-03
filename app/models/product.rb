@@ -19,6 +19,7 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
 
   has_many :cartItems
+  
   has_many_attached :photos
 
 end

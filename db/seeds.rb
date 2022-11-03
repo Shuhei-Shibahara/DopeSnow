@@ -58,6 +58,9 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  atkin_Snowboard_jacket_men_grey_camo = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/Atkin_Snowboard_jacket_men_grey_camo.png')
+  product3.photos.attach(io: atkin_Snowboard_jacket_men_grey_camo, filename: 'product3_grey_camo.jpg')
+
   product4 = Product.create!({
     name: "Notorious B.I.B Snowboard Pants Men",
     price: 219.00 ,

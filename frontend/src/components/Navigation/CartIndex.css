@@ -1,0 +1,57 @@
+
+.main_cart_index_container{
+  transform: translateX(0);
+  transition: transform .3s cubic-bezier(0, 0, .4, 1);
+}
+
+.main_cart_text_container{
+  width: 526px;
+  height: 100vh;
+  background: hsl(0, 0%, 100%);
+  padding: 90px 40px;
+}
+
+.close_button{
+  background: url('../../images/close.png') no-repeat center;
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  padding: 20px;
+  background-size: 14px;
+  top: 40px;
+  right: 27px;
+}
+
+.inside_cart_text_container{
+  position: relative;
+}
+
+.shopping_bag_text{
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.15px;
+  line-height: 58px;
+  font-family: 'Inter', sans-serif;
+}
+
+.always_free_text{
+  color: #53555b;
+  font-size: 12px;
+  letter-spacing: -.06px;
+  line-height: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.price_text{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.15px;
+  line-height: 58px;
+  font-family: 'Inter', sans-serif;
+}
