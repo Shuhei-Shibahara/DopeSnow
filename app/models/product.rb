@@ -17,5 +17,6 @@ class Product < ApplicationRecord
   validates :name, :description, :color, :size, :category, :gender, presence: true
   validates :name, uniqueness: true
 
+  has_many :carts
 
 end

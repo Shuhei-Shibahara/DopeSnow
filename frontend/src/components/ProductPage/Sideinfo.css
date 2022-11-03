@@ -1,4 +1,7 @@
 
+ul{
+  padding-inline-start: 0px;
+}
 .main_side_container{
   padding: 0 30px 32.5px 30px;
   min-height: inherit;
@@ -285,13 +288,12 @@
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
 }
 
 .side_bar_list_amenities li{
   list-style: none;
   margin-top: 0;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 20px;
   font-family: 'Inter', sans-serif;
@@ -308,6 +310,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
+  margin-right: 10px;
+  border-radius: 100%;
 }
 /* .future_onclick_for_color::after {
   content: "";
@@ -333,3 +337,6 @@
 .selected_size {
   border: 1px black solid;
 }
+
+
+

@@ -44,8 +44,6 @@ class Api::ProductsController < ApplicationController
 
   def show
     @product = Product.find_by_id(params[:id])
-
-    puts 'hello'
     render :show
   end 
 

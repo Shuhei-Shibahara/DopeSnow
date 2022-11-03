@@ -18,6 +18,8 @@ class User < ApplicationRecord
   validates :name, presence: true, format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   validates :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
+  
+  has_one :shopping_session
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

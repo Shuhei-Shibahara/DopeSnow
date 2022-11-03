@@ -9,7 +9,6 @@ const Sideinfo = ({product}) => {
 
   const colors = product.color.split(' ')
   const sizes = product.size.split(' ')
-  // const borderDesign = useRef()
 
   const [pickedColor, setPickedColor] = useState(colors[0])
   const [selectedColor, setSelectedColor] = useState(0)

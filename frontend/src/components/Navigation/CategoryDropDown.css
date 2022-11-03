@@ -24,12 +24,6 @@
   display: flex;
   max-width: 1514;
   margin: 0 auto;
-  width: 100%;
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  animation-name: desktop-navigation-open;
-  animation-fill-mode: forwards;
-  transform-origin: top;
   background-color: hsl(0, 0%, 100%);
 }
 .gender_link_wrapper{
