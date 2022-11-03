@@ -6,6 +6,7 @@ ruby "3.1.1"
 gem "faker"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
+gem "aws-sdk-s3"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
