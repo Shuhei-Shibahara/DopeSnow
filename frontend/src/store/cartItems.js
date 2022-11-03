@@ -19,10 +19,10 @@ export const receiveItem = (item) => {
 };
 
 
-export const removeItem = (cartItemId) => {
+export const removeItem = (productId) => {
   return {
     type: REMOVE_ITEM,
-    cartItemId
+    productId
   };
 };
 
@@ -61,13 +61,13 @@ export const updateCartItem = (cartItem) => async dispatch => {
     }
   })
   if (res.ok){
-    const cartItem = await res.json();
-    dispatch(receiveItem(cartItem))
+    const updatedCartItem = await res.json();
+    dispatch(receiveItem(updatedCartItem))
   }
 }
 
-export const deleteCartItem = (cartItemId, productId) => async dispatch => {
-  const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
+export const deleteCartItem = (productId) => async dispatch => {
+  const res = await csrfFetch(`/api/cart_items/${productId}`, {
     method: 'DELETE'
   })
   dispatch(removeItem(productId))
@@ -79,11 +79,12 @@ function cartReducer(state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_ITEMS:
-      return action.user.cartItems;
+      return action.items;
     case RECEIVE_ITEM:
-      return { ...nextState, ...action.user.cartItem }
+      return { ...nextState, ...action.item }
+      // return { ...nextState, [action.item]}
     case REMOVE_ITEM:
-      delete nextState[action.cartItemId];
+      delete nextState[action.prodcutId];
       return nextState;
     default:
       return state;

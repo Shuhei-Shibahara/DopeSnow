@@ -9,7 +9,7 @@ import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
 import * as productActions from './store/products'
-
+import * as cartActions from './store/cartItems'
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
   window.productActions = productActions;
+  window.cartActions = cartActions;
 }
 
 function Root() {

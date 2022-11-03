@@ -21,11 +21,11 @@ export const fetchProducts = (gender, category) => async dispatch => {
   }
 }
 
-export const fetchProduct = (productId) => async dispatch => {
-  const res = await csrfFetch(`/api/products/${productId}`)
+export const fetchProduct = (cartId,productId) => async dispatch => {
+  const res = await csrfFetch(`/api/products/${cartId}`)
   if (res.ok){
     const product = await res.json();
-    dispatch(receiveProduct(product))
+    dispatch(receiveProduct(productId))
   }
 }
 

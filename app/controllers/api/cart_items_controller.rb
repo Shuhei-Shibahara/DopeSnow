@@ -3,9 +3,9 @@ class Api::CartItemsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    @cart = CartItem.new(cart_params)
-    if @cart&.save
-      render '/api/cart_item/show'
+    @cart_item = CartItem.new(cart_params)
+    if @cart_item&.save
+      render '/api/cart_items/show'
     else
       render json: {errors: ['Could not create cart']}, status: 422;
     end
@@ -14,20 +14,21 @@ class Api::CartItemsController < ApplicationController
   def index
     user_id = current_user[:id]
     @cart_items = CartItem.where(user_id: user_id)
-    render '/api/cart_item/index'
+    render '/api/cart_items/index'
   end
 
   def update
-    @cart = CartItem.find_by_id(params[:id])
-    if @cart.update(cart_params)
+    @cart_item = CartItem.find_by_id(params[:id])
+    if @cart_item.update(cart_params)
         render 'api/cart_items/show'
     else 
         render json: {errors: ['Could not add to cart']}, status: 422;
     end
   end
 
-  def delete
+  def destroy
     @cart_item = CartItem.find_by_id(params[:id])
+    debugger
     if @cart_item.destroy
       render json: {message: ['This item has been removed from cart']}
     end
@@ -36,6 +37,6 @@ class Api::CartItemsController < ApplicationController
   private
 
   def cart_params
-    params.require(:cart_item).require(:id, :product_id, :user_id,:quantity)
+    params.require(:cart_item).permit(:id, :product_id, :user_id, :quantity, :price, :gender, :color, :size)
   end
 end
