@@ -13,8 +13,7 @@ function CartIndex() {
   },[dispatch])
   
   const getTotal = () => {
-    let priceArr = Object.values(items).map(item => parseFloat(item.price))
-    console.log(priceArr, "priceArr")
+    let priceArr = Object.values(items).map(item => parseFloat(item.price) * item.quantity)
     let total = 0;
     for (let price of priceArr){
       total += price
