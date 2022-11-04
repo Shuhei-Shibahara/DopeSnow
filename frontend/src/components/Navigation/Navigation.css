@@ -89,6 +89,7 @@ img.logo{
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 30;
 }
 
 .profile_dropdown a{

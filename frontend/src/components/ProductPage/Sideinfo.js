@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getCartItem, createCartItem } from '../../store/cartItems'
 
-const Sideinfo = ({product}) => {
+const Sideinfo = ({product, showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const colors = product.color.split(' ') 
   const sizes = product.size.split(' ')
@@ -30,14 +30,17 @@ const Sideinfo = ({product}) => {
     const userId = user.id
 
     const newItem = {
-      product_id: product.id,
-      user_id: user.id,
-      quantity: 1,
-      price: product.price,
-      gender: product.gender,
-      color: pickedColor,
-      size: pickedSize
+      cartItem: {
+        productId: product.id,
+        userId: user.id,
+        quantity: 1,
+        price: product.price,
+        gender: product.gender,
+        color: pickedColor,
+        size: pickedSize
+      }
     }
+    setShowModal(true)
    return dispatch(createCartItem(newItem))
   }
   

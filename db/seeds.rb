@@ -16,7 +16,7 @@ ActiveRecord::Base.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('products')
 
 
-  Shuhei = User.create!(email: "wipeout@mail.com", name: "Shuhei", password: 'password')
+  shuhei = User.create!(email: "wipeout@mail.com", name: "Shuhei", password: 'password')
   10.times do 
     User.create!({
       email: Faker::Internet.unique.email,

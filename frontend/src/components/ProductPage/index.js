@@ -5,7 +5,7 @@ import { fetchProduct } from "../../store/products";
 import  Sideinfo from "./Sideinfo.js"
 import './ProductPage.css'
 
-const ProductPage = () => {
+const ProductPage = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const product = useSelector(state => state.products[id])
@@ -49,7 +49,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <Sideinfo product={product} />
+      <Sideinfo product={product} showModal={showModal} setShowModal={setShowModal} />
     </>
   )
 }

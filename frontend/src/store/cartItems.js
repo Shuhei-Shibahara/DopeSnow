@@ -62,7 +62,6 @@ export const createCartItem = (cartItem) => async dispatch => {
   })
   if (res.ok){
     const cartItem = await res.json();
-    debugger
     dispatch(receiveItem(cartItem))
   }
 }

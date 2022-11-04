@@ -1,10 +1,9 @@
 class Api::CartItemsController < ApplicationController
 
-  before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :destroy]
 
   def create
     @cart_item = CartItem.new(cart_params)
-    debugger
     if @cart_item&.save
       render '/api/cart_items/show'
     else
@@ -29,7 +28,6 @@ class Api::CartItemsController < ApplicationController
 
   def destroy
     @cart_item = CartItem.find_by_id(params[:id])
-    debugger
     if @cart_item.destroy
       render json: {message: ['This item has been removed from cart']}
     end

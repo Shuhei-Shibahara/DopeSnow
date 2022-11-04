@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import CartIndex from './CartIndex';
 
-function CartIndexModal() {
-  const [showModal, setShowModal] = useState(false);
+function CartIndexModal({showModal, setShowModal}) {
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <>

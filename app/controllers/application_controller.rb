@@ -10,6 +10,7 @@ class ApplicationController < ActionController::API
 
   def current_user 
     @current_user ||= User.find_by(session_token: session[:session_token])
+    
   end
 
   def login(user)
@@ -18,13 +19,14 @@ class ApplicationController < ActionController::API
   end
 
   def logout
-    current_user.reset_session_token
+    current_user.reset_session_token if current_user
     session[:session_token] = nil
     @current_user = nil
   end
 
   def require_logged_in
-   if !logged_in?
+    unless current_user
+  # if !logged_in? # if current_user is falsey / current_user = nil
       render json: { errors: ['Must be logged in!'] }, status: :unauthorized
     end 
   end

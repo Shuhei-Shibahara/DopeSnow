@@ -7,10 +7,14 @@ import ProfilePage from './components/ProfilePage';
 import HomePage from './components/HomePage'
 import ProductIndexPage from './components/ProductIndexPage'
 import ProductPage from './components/ProductPage'
+import { useState } from 'react';
 function App() {
+
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
-        <Navigation />
+        <Navigation showModal={showModal} setShowModal={setShowModal}/>
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -29,7 +33,7 @@ function App() {
             </Route>
 
             <Route exact path="/product/:id">
-              <ProductPage />
+              <ProductPage showModal={showModal} setShowModal={setShowModal} />
             </Route>
 
             <Route exact path="/products/:gender">
