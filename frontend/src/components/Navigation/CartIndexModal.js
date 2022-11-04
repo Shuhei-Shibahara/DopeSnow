@@ -3,7 +3,6 @@ import { Modal } from '../../context/Modal';
 import CartIndex from './CartIndex';
 
 function CartIndexModal({showModal, setShowModal}) {
-  // const [showModal, setShowModal] = useState(false);
 
   return (
     <>

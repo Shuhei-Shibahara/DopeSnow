@@ -176,6 +176,7 @@
 }
 
 .shopping_cart_size{
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   padding: 7px 10px 5px;
   border-radius: 3px;
@@ -183,4 +184,38 @@
   width: 65px;
   background: hsl(0, 0%, 100%);
   margin-left: 10px;
+}
+
+.add_quantity{
+  position: relative;
+  background: 0 0;
+  color: black;
+  border: 0;
+  outline: 0;
+  border-radius: 100%;
+  line-height: 28px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0;
+  /* height: 28px; */
+  height: 38px;
+  width: 58px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.subtract_quantity{
+  position: relative;
+  background: 0 0;
+  color: black;
+  border: 0;
+  outline: 0;
+  border-radius: 100%;
+  line-height: 28px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0;
+  /* height: 28px; */
+  height: 38px;
+  width: 58px;
+  font-family: 'Courier New', Courier, monospace;
 }
