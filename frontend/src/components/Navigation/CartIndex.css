@@ -55,3 +55,132 @@
   line-height: 58px;
   font-family: 'Inter', sans-serif;
 }
+
+.cart_product_image{
+  width: 90px;
+  height: 105.907px;
+}
+
+.main_cart_shopping_item_container{
+  margin-top: 45px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.inner_shopping_item_container{
+  overflow-y: auto;
+  position: static;
+  margin-top: 29px;
+  width: 100%;
+  top: 131px;
+  bottom: 0;
+  z-index: 49;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.individual_shopping_item_container{
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.link_back_to_product{
+  overflow: visible;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;  
+}
+
+.inside_photo_container{
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.shopping_cart_main_text_holder{
+  position: relative;
+  flex-grow: 1;
+}
+
+.shopping_cart_text_container_styling{
+  justify-content: start !important;
+  margin-left: 30px;
+  background: 0 0;
+  max-width: 270px;
+  align-self: baseline;
+  height: 100%;
+  margin-right: 0 !important;
+}
+.shopping_cart_company_name{
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.shopping_cart_product_name{
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: hsl(0, 0%, 0%) !important;
+  margin-bottom: 5px;
+  max-width: 200px !important;
+  white-space: normal;
+}
+
+.shopping_cart_product_price{
+  position: absolute;
+  top: -3px !important;
+  left: unset !important;
+  font-family: 'Inter', sans-serif;
+  right: 40px;
+  font-size: 15px !important;
+  font-weight: 700
+}
+
+.shopping_cart_size_quantity_container{
+  display: flex;
+}
+
+.quantity_container{
+  margin-top: 0;
+  position: static;
+  display: flex;
+  justify-content: stretch;
+}
+
+.shopping_cart_quantity{
+  border-radius: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 38px;
+  width: 58px;
+  background-color: #fbfbfb;
+  border: 1px solid #f0f0f0;
+  color: var(--l);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+.shopping_cart_size{
+  font-size: 13px;
+  padding: 7px 10px 5px;
+  border-radius: 3px;
+  height: 36px;
+  width: 65px;
+  background: hsl(0, 0%, 100%);
+  margin-left: 10px;
+}

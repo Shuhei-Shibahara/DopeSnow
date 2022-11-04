@@ -34,6 +34,7 @@ const Sideinfo = ({product, showModal, setShowModal}) => {
         productId: product.id,
         userId: user.id,
         quantity: 1,
+        name: product.name,
         price: product.price,
         gender: product.gender,
         color: pickedColor,

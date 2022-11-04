@@ -12,7 +12,8 @@ class Api::CartItemsController < ApplicationController
   end
 
   def index
-    user_id = current_user[:id]
+    # user_id = current_user[:id]
+    user_id = current_user.id
     @cart_items = CartItem.where(user_id: user_id)
     render '/api/cart_items/index'
   end
@@ -36,6 +37,6 @@ class Api::CartItemsController < ApplicationController
   private
 
   def cart_params
-    params.require(:cart_item).permit(:id, :product_id, :user_id, :quantity, :price, :gender, :color, :size)
+    params.require(:cart_item).permit(:id, :product_id, :user_id, :quantity, :name, :price, :gender, :color, :size)
   end
 end

@@ -15,9 +15,10 @@
 #
 class CartItem < ApplicationRecord
 
-  validates :product_id, :user_id, :quantity, :size, :gender, :color, :price, presence: true
+  validates :product_id, :user_id, :name, :quantity, :size, :gender, :color, :price, presence: true
   validates :product_id, uniqueness: {scope: :user_id}
   
   belongs_to :user
   belongs_to :product
 end
+ 
