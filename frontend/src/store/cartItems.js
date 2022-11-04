@@ -26,6 +26,21 @@ export const removeItem = (productId) => {
   };
 };
 
+ export const getCartItems = state => {
+    if (!state.cartItems) {
+      return []
+    } else {
+      return Object.values(state.cartItems)
+    }
+  }
+
+  export const getCartItem = (productId) => state => {
+    if (!state.cartItems){
+      return []
+    } else {
+      return state.cartItems[productId]
+    }
+  }
 
 export const fetchCartItems = () => async dispatch => {
   const res = await csrfFetch(`/api/cart_items`)
@@ -47,6 +62,7 @@ export const createCartItem = (cartItem) => async dispatch => {
   })
   if (res.ok){
     const cartItem = await res.json();
+    debugger
     dispatch(receiveItem(cartItem))
   }
 }

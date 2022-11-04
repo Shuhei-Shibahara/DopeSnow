@@ -47,6 +47,13 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  adept_2021_Snowboard_jacket_men_olive_green = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/adept_2021_snowboard_jacket_men_olive_green.png')
+  adept_2021_Snowboard_jacket_men_olive_green2 = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/adept_2021_snowboard_jacket_olive_green_2.png')
+  product2.photos.attach([{io: adept_2021_Snowboard_jacket_men_olive_green , filename: 'product2_olive_green.png'},{io: adept_2021_Snowboard_jacket_men_olive_green2 , filename: 'product2_olive_green_2.png'}])
+
+
+  # product2.photos.attach(io: adept_2021_Snowboard_jacket_men_olive_green2 , filename: 'product2_olive_green_2.png')
+
   product3 = Product.create!({
     name: "Akin Snowboard Jacket Men",
     price: 259.00 ,

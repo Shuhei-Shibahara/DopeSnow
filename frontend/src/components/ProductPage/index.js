@@ -17,9 +17,11 @@ const ProductPage = () => {
   if (product === undefined){
     return null
   }
+
   return(
     <>
-      <img src={product.photoUrl} />
+      {/* <img src={product.imgUrls[0]} /> */}
+      {/* <img src={product.imgUrls[1]} /> */}
       <div className='product_show_outside_container'>
         <div className='product_show_main_container'>
           <div className='product_show_main'>

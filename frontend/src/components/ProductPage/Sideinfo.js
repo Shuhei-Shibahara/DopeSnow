@@ -3,18 +3,44 @@ import star from "../../images/star.png"
 import favorite from '../../images/favorite_icon.png'
 import { useState, useEffect } from 'react'
 import { useRef } from 'react'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { getCartItem, createCartItem } from '../../store/cartItems'
 
 const Sideinfo = ({product}) => {
-
-  const colors = product.color.split(' ')
+  const dispatch = useDispatch();
+  const colors = product.color.split(' ') 
   const sizes = product.size.split(' ')
+  const user = useSelector(state => state.session.user)
+  const cartItem = useSelector(getCartItem(product.id))
 
   const [pickedColor, setPickedColor] = useState(colors[0])
   const [selectedColor, setSelectedColor] = useState(0)
   const [pickedSize, setPickedSize] = useState(sizes[2]) 
   const [selectedSize, setSelectedSize] = useState(2)
 
+  // useEffect(() => {
+  //   if (user) dispatch(getCartItem(product.id));
+  // }, [item])
+
+  const handleAddCart = (e) => {
+    e.preventDefault();
+
+    if(!user) return null;
+
+    const userId = user.id
+
+    const newItem = {
+      product_id: product.id,
+      user_id: user.id,
+      quantity: 1,
+      price: product.price,
+      gender: product.gender,
+      color: pickedColor,
+      size: pickedSize
+    }
+   return dispatch(createCartItem(newItem))
+  }
+  
 
   const handleColorChange = (color, i) => (e) => {
     e.preventDefault();
@@ -87,7 +113,7 @@ const Sideinfo = ({product}) => {
           </div>
         </div>
         <div className='side_bar_cart_favorite_main'>
-          <button className='side_bar_shopping_cart_button'>
+          <button className='side_bar_shopping_cart_button' onClick={handleAddCart}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g fill="none" fillRule="evenodd"><path stroke="currentColor" strokeWidth="2" d="M3.5 0v13.65h10.182L17.5 4.095h-14"></path><ellipse fill="currentColor" fillRule="nonzero" cx="4" cy="17.9" rx="1.5" ry="1.575"></ellipse><ellipse fill="currentColor" fillRule="nonzero" cx="12" cy="17.9" rx="1.5" ry="1.575"></ellipse></g></svg>
             <span className="cart_price_text" data-e2e="CURP">$ {product.price} USD</span>
           </button>
