@@ -1,38 +1,11 @@
 {
-  "name": "dopesnow",
+  "name": "sicksnow",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {
-    "hoist-non-react-statics": "^3.3.2",
-    "deep-diff": "^0.3.8",
-    "csstype": "^3.1.1",
-    "history": "^4.10.1",
-    "isarray": "^0.0.1",
-    "js-tokens": "^4.0.0",
-    "loose-envify": "^1.4.0",
-    "object-assign": "^4.1.1",
-    "path-to-regexp": "^1.8.0",
-    "prop-types": "^15.8.1",
-    "react-is": "^18.2.0",
-    "react": "^18.2.0",
-    "react-redux": "^8.0.4",
-    "react-router-dom": "^5.3.4",
-    "redux": "^4.2.0",
-    "react-router": "^5.3.4",
-    "redux-thunk": "^2.4.1",
-    "redux-logger": "^3.0.6",
-    "regenerator-runtime": "^0.13.10",
-    "resolve-pathname": "^3.0.0",
-    "tiny-invariant": "^1.3.1",
-    "use-sync-external-store": "^1.2.0",
-    "value-equal": "^1.0.1",
-    "tiny-warning": "^1.0.3"
-  },
-  "devDependencies": {},
   "scripts": {
     "build": "npm install --prefix frontend && npm run build --prefix frontend"    
   },
@@ -41,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shuhei-Shibahara/DopeSnow.git"
+    "url": "git+https://github.com/Shuhei-Shibahara/Sick-Snow.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shuhei-Shibahara/DopeSnow/issues"
+    "url": "https://github.com/Shuhei-Shibahara/Sick-Snow/issues"
   },
-  "homepage": "https://github.com/Shuhei-Shibahara/DopeSnow#readme"
+  "homepage": "https://github.com/Shuhei-Shibahara/Sick-Snow#readme"
 }
