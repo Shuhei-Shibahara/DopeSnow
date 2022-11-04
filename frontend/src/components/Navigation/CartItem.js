@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartItem } from "../../store/cartItems";
+import { deleteCartItem, updateCartItem } from "../../store/cartItems";
 import { useState } from "react";
 
 export default function CartItem({cartItem}){
@@ -14,6 +14,18 @@ export default function CartItem({cartItem}){
     }
     dispatch(updateCartItem(updateItem))
   } 
+
+  const handleDecrease = () => {
+      const updateItem = {
+        ...cartItem, quantity: cartItem.quantity - 1
+      }
+      dispatch(updateCartItem(updateItem))
+  } 
+
+  if (cartItem.quantity === 0){
+    dispatch(deleteCartItem(cartItem.id))
+  }
+
 
   return(
     <div className="individual_shopping_item_container">
@@ -32,7 +44,7 @@ export default function CartItem({cartItem}){
           <div>
             <div className="shopping_cart_size_quantity_container">
               <div className="quantity_container">
-                <button className="subtract_quantity">-</button>
+                <button onClick={handleDecrease} className="subtract_quantity">-</button>
 
                 <div className="shopping_cart_quantity">{cartItem.quantity}</div>
                 <button onClick={handleIncrease} className="add_quantity">+</button>

@@ -1,11 +1,14 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem "bcrypt"
-gem "jbuilder"
+
 ruby "3.1.1"
-gem "faker"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
+
+
+gem "faker"
+gem "bcrypt"
+gem "jbuilder"
 gem "aws-sdk-s3"
 
 # Use postgresql as the database for Active Record
