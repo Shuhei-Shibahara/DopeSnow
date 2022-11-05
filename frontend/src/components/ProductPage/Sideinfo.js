@@ -48,7 +48,6 @@ const Sideinfo = ({product, showModal, setShowModal}) => {
 
   const handleColorChange = (color, i) => (e) => {
     e.preventDefault();
-    console.log(color, i)
     setSelectedColor(i);
     setPickedColor(color);
   }

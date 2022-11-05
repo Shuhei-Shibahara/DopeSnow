@@ -19,10 +19,10 @@ export const receiveItem = (item) => {
 };
 
 
-export const removeItem = (productId) => {
+export const removeItem = (cartItemId) => {
   return {
     type: REMOVE_ITEM,
-    productId
+    cartItemId
   };
 };
 
@@ -96,10 +96,10 @@ function cartReducer(state = {}, action) {
     case RECEIVE_ITEMS:
       return action.items;
     case RECEIVE_ITEM:
-      return { ...nextState, ...action.item }
+      return { ...nextState,[action.item.id]: action.item }
       // return { ...nextState, [action.item]}
     case REMOVE_ITEM:
-      delete nextState[action.prodcutId];
+      delete nextState[action.cartItemId];
       return nextState;
     default:
       return state;

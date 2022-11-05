@@ -16,15 +16,19 @@ export default function CartItem({cartItem}){
   } 
 
   const handleDecrease = () => {
+    if (cartItem.quantity === 1){
+      // debugger
+      dispatch(deleteCartItem(cartItem.id))
+      
+    }else{
       const updateItem = {
         ...cartItem, quantity: cartItem.quantity - 1
       }
-      dispatch(updateCartItem(updateItem))
+      dispatch(updateCartItem(updateItem))  
+    }
   } 
 
-  if (cartItem.quantity === 0){
-    dispatch(deleteCartItem(cartItem.id))
-  }
+
 
 
   return(

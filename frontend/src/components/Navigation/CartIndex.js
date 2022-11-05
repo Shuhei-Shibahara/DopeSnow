@@ -21,16 +21,12 @@ function CartIndex() {
     return total
   }
 
-  if (items.length === 0){
-    return null
-  }
 
 
 
   return (
     <>
       <div className="main_cart_index_container">
-        {console.log(items)}
         <div className="main_cart_text_container">
           <button className="close_button"></button>
           <header className="inside_cart_text_container">
