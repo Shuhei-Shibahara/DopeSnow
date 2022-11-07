@@ -17,7 +17,6 @@ export default function CartItem({cartItem}){
 
   const handleDecrease = () => {
     if (cartItem.quantity === 1){
-      // debugger
       dispatch(deleteCartItem(cartItem.id))
       
     }else{
@@ -28,6 +27,9 @@ export default function CartItem({cartItem}){
     }
   } 
 
+  if(cartItem === undefined) {
+    return null
+  }
 
 
 
@@ -36,7 +38,7 @@ export default function CartItem({cartItem}){
       <div className="shopping_cart_main_photo_container">
         <Link to={`/product/${cartItem.id}`} className='link_back_to_product'>
           <div className="inside_photo_container">
-            <img src={"https://sick-snow.s3.us-west-2.amazonaws.com/Screen+Shot+2022-11-01+at+9.24.02+AM.png"} className="cart_product_image" />
+            <img src={cartItem.imgUrls[0]} className="cart_product_image" />
           </div>
         </Link>
       </div>

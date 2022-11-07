@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchProduct } from "../../store/products";
 import  Sideinfo from "./Sideinfo.js"
+import Review from "./Review.js";
 import './ProductPage.css'
 
 const ProductPage = ({showModal, setShowModal}) => {
@@ -55,6 +56,7 @@ const ProductPage = ({showModal, setShowModal}) => {
         </div>
       </div>
       <Sideinfo product={product} showModal={showModal} setShowModal={setShowModal} />
+      <Review productId={product.id} />  
     </>
   )
 }

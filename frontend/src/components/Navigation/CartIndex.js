@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteCartItem, fetchCartItems, getCartItems } from "../../store/cartItems";
 import './CartIndex.css'
 import CartItem from "./CartItem";
+
 function CartIndex() {
   const dispatch = useDispatch();
   const items = useSelector(getCartItems)

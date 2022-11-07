@@ -12,6 +12,7 @@
 #  size       :string           not null
 #  gender     :string           not null
 #  color      :string           not null
+#  name       :string           not null
 #
 class CartItem < ApplicationRecord
 

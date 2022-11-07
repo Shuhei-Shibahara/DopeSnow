@@ -7,12 +7,11 @@ class Api::CartItemsController < ApplicationController
     if @cart_item&.save
       render '/api/cart_items/show'
     else
-      render json: {errors: ['Could not create cart']}, status: 422;
+      render json: {errors: ['Could not create a cart']}, status: 422;
     end
   end
 
   def index
-    # user_id = current_user[:id]
     user_id = current_user.id
     @cart_items = CartItem.where(user_id: user_id)
     render '/api/cart_items/index'

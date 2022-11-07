@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getCartItem, createCartItem } from '../../store/cartItems'
 
-const Sideinfo = ({product, showModal, setShowModal}) => {
+const Sideinfo = ({product, setShowModal}) => {
   const dispatch = useDispatch();
   const colors = product.color.split(' ') 
   const sizes = product.size.split(' ')
@@ -18,10 +18,7 @@ const Sideinfo = ({product, showModal, setShowModal}) => {
   const [pickedSize, setPickedSize] = useState(sizes[2]) 
   const [selectedSize, setSelectedSize] = useState(2)
 
-  // useEffect(() => {
-  //   if (user) dispatch(getCartItem(product.id));
-  // }, [item])
-
+console.log(product)
   const handleAddCart = (e) => {
     e.preventDefault();
 
@@ -83,13 +80,10 @@ const Sideinfo = ({product, showModal, setShowModal}) => {
             {colors.map((color, i) =>
             (<>
               <div className='color_container'>
-                {/* <button onClick={handleColorChange(color, i)} className={`future_onclick_for_color ${parseInt(i) === selectedColor ? 'selected_color' : ''}`}> */}
                 <button onClick={handleColorChange(color, i)} className='future_onclick_for_color'>
 
-                  {/* <div className={`color_image_styling`} id={`color-${i}`} key={i}> */}
-
                   <div className={`color_image_styling ${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}>
-                    <img src="https://sick-snow.s3.us-west-2.amazonaws.com/m-yeti-main.png" className='color_image' title={color}/>
+                    <img src={product.imgUrls[i]} className='color_image' title={color} />
                   </div>
                 </button>
                 <div className='check_mark'></div>
