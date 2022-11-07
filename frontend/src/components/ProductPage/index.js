@@ -20,8 +20,7 @@ const ProductPage = ({showModal, setShowModal}) => {
 
   return(
     <>
-      {/* <img src={product.imgUrls[0]} /> */}
-      {/* <img src={product.imgUrls[1]} /> */}
+ 
       <div className='product_show_outside_container'>
         <div className='product_show_main_container'>
           <div className='product_show_main'>
@@ -36,7 +35,13 @@ const ProductPage = ({showModal, setShowModal}) => {
                   <div className="inner_container">
                     <div className="change_image_div">
                       <div className="image_container">
-                        <img src="https://sick-snow.s3.us-west-2.amazonaws.com/m-yeti-main.png" className="main_image" />
+                        {/* {product.imgUrls.map(imgurl =>
+                          <img src={imgurl} className="main_image" />
+
+                          )} */}
+                        <img src={product.imgUrls[0]} className="main_image" />
+
+
 
                       </div>
                       

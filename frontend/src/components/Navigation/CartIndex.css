@@ -220,3 +220,27 @@
   width: 58px;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.checkout_container{
+  margin-top: 40px;
+  font-weight: 400;
+  background-color: black;;
+  }
+
+.checkout_button{
+  width: 100%;
+  text-transform: unset;
+  font-size: 13px;
+  font-weight: 700;
+  height: 60px;
+  font-family: 'Inter', sans-serif;
+  padding: 0 30px;
+  display: block;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  line-height: 15px;
+  text-align: center;
+  color: white
+}

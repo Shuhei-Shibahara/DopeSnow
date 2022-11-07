@@ -37,6 +37,13 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  yeti1_black_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/yeti_men/yeti_snowboard_jacket_black_m.png')
+  yeti2_burgundy_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/yeti_men/yeti_snowboard_jacket_burgundy_m.png')
+  yeti3_pineblue_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/yeti_men/yeti_snowboard_jacket_pine_blue_m.png')
+  yeti4_purple_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/yeti_men/yeti_snowboard_jacket_purple_m.png')
+  product1.photos.attach([{io: yeti1_black_m , filename: 'product1_black.png'},{io: yeti2_burgundy_m , filename: 'product1_burgundy.png'}, {io: yeti3_pineblue_m , filename: 'product1_pineblue.png'},{io: yeti4_purple_m , filename: 'product1_purple.png'}])
+
+
   product2 = Product.create!({
     name: "Adept 2021 Snowboard Jacket Men",
     price: 199.00 ,
@@ -47,9 +54,10 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
-  adept_2021_Snowboard_jacket_men_olive_green = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/adept_2021_snowboard_jacket_men_olive_green.png')
-  adept_2021_Snowboard_jacket_men_olive_green2 = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/adept_2021_snowboard_jacket_olive_green_2.png')
-  product2.photos.attach([{io: adept_2021_Snowboard_jacket_men_olive_green , filename: 'product2_olive_green.png'},{io: adept_2021_Snowboard_jacket_men_olive_green2 , filename: 'product2_olive_green_2.png'}])
+  adept1_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/adept_2021_men/adept_2021_snowboard_jacket_1_m.png')
+  adept2_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/adept_2021_men/adept_2021_snowboard_jacket_2_m.png')
+  adept3_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/adept_2021_men/adept_2021_snowboard_jacket_3_m.png')
+  product2.photos.attach([{io: adept1_m , filename: 'product2_1.png'},{io: adept2_m , filename: 'product2_2.png'},{io: adept3_m , filename: 'product2_3.png'}])
 
 
   # product2.photos.attach(io: adept_2021_Snowboard_jacket_men_olive_green2 , filename: 'product2_olive_green_2.png')
@@ -65,8 +73,11 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
-  atkin_Snowboard_jacket_men_grey_camo = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/Atkin_Snowboard_jacket_men_grey_camo.png')
-  product3.photos.attach(io: atkin_Snowboard_jacket_men_grey_camo, filename: 'product3_grey_camo.jpg')
+  atkin1_black_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/atkin_men/atkin_snowboard_jacket_black_m.png')
+  atkin2_blue_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/atkin_men/atkin_snowboard_jacket_blue_m.png')
+  atkin3_burgundy_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/atkin_men/atkin_snowboard_jacket_burgundy_m.png')
+  atkin4_olivegreen_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-jacket/atkin_men/atkin_snowboard_jacket_olive_green_m.png')
+  product3.photos.attach([{io: atkin1_black_m , filename: 'product3_black.png'},{io: atkin2_blue_m , filename: 'product3_blue.png'}, {io: atkin3_burgundy_m , filename: 'product3_burgundy.png'},{io: atkin4_olivegreen_m , filename: 'product3_olivegreen.png'}])
 
   product4 = Product.create!({
     name: "Notorious B.I.B Snowboard Pants Men",
@@ -79,6 +90,12 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  notorious1_black_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/notorious_bib_men/notorious_pants_black_m.png')
+  notorious2_green_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/notorious_bib_men/notorious_pants_green_m.png')
+  notorious3_khaki_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/notorious_bib_men/notorious_pants_khaki_m.png')
+  notorious4_walnut_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/notorious_bib_men/notorious_pants_walnut_m.png')
+  product4.photos.attach([{io: notorious1_black_m , filename: 'product4_black.png'},{io: notorious2_green_m , filename: 'product4_green.png'}, {io: notorious3_khaki_m , filename: 'product4_khaki.png'},{io: notorious4_walnut_m , filename: 'product4_walnut.png'}])
+
   product5 = Product.create!({
     name: "Iconic Snowboard Pants Men",
     price: 169.00 ,
@@ -89,6 +106,13 @@ ActiveRecord::Base.transaction do
     category: "Mens-Snowboard-Pants",
     gender: "M"
   })
+
+  iconic1_black_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/iconic_men/iconic_pants_black_m.png')
+  iconic2_blackout_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/iconic_men/iconic_pants_blackout_m.png')
+  iconic3_blue_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/iconic_men/iconic_pants_blue_m.png')
+  iconic4_green_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/iconic_men/iconic_pants_green_m.png')
+  product5.photos.attach([{io: iconic1_black_m , filename: 'product5_black.png'},{io: iconic2_blackout_m , filename: 'product5_blackout.png'}, {io: iconic3_blue_m , filename: 'product5_blue.png'},{io: iconic4_green_m , filename: 'product5_green.png'}])
+
   product6 = Product.create!({
     name: "Antek Snowboard Pants Men",
     price: 169.00 ,
@@ -100,6 +124,12 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  antek1_black_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/anek_men/anek_pants_black_m.png')
+  antek2_camogrey_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/anek_men/anek_pants_camo_grey_m.png')
+  antek3_green_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/anek_men/anek_pants_green_m.png')
+  antek4_sand_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-pants/anek_men/anek_pants_sand_m.png')
+  product6.photos.attach([{io: antek1_black_m , filename: 'product6_black.png'},{io: antek2_camogrey_m , filename: 'product6_camogrey.png'}, {io: antek3_green_m , filename: 'product6_green.png'},{io: antek4_sand_m , filename: 'product6_sand.png'}])
+
   product7 = Product.create!({
     name: "Daily Capital T-shirt Men",
     price: 29.00 ,
@@ -109,6 +139,12 @@ ActiveRecord::Base.transaction do
     category: "Mens-T-shirts",
     gender: "M"
   })
+
+  daily1_black1_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/daily/daily_tshirt_black_1_m.png')
+  daily2_black2_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/daily/daily_tshirt_black_2_m.png')
+  daily3_black3_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/daily/daily_tshirt_black_3_m.png')
+  daily4_black4_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/daily/daily_tshirt_black_4_m.png')
+  product7.photos.attach([{io: daily1_black1_m , filename: 'product7_black1.png'},{io: daily2_black2_m , filename: 'product7_black2.png'}, {io: daily3_black3_m , filename: 'product7_black3.png'},{io: daily4_black4_m , filename: 'product7_black4.png'}])
 
 
   product8 = Product.create!({
@@ -121,6 +157,13 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  rose1_black1_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rose/rose_tshirt_black_1_m.png')
+  rose2_black2_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rose/rose_tshirt_black_2_m.png')
+  rose3_white1_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rose/rose_tshirt_white_1_m.png')
+  rose4_white2_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rose/rose_tshirt_white_2_m.png')
+  product8.photos.attach([{io: rose1_black1_m , filename: 'product8_black1.png'},{io: rose2_black2_m , filename: 'product8_black2.png'}, {io: rose3_white1_m , filename: 'product8_white1.png'},{io: rose4_white2_m , filename: 'product8_white2.png'}])
+
+
   product9 = Product.create!({
     name: "Daily Rise T-shirt Men",
     price: 29.00 ,
@@ -130,6 +173,12 @@ ActiveRecord::Base.transaction do
     category: "Mens-T-shirts",
     gender: "M"
   })
+
+  rise1_black1_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rise/rise_tshirt_black_1_m.png')
+  rise2_black2_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rise/rise_tshirt_black_2_m.png')
+  rise3_burgundy_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rise/rise_tshirt_burgundy_m.png')
+  rise4_white_m = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-tshirt/rise/rise_tshirt_white_m.png')
+  product9.photos.attach([{io: rise1_black1_m , filename: 'product9_black1.png'},{io: rise2_black2_m , filename: 'product9_black2.png'}, {io: rise3_burgundy_m , filename: 'product9_burgundy.png'},{io: rise4_white_m , filename: 'product9_white.png'}])
 
   product10 = Product.create!({
     name: "Daily 2X-UP Hoodie Men",
@@ -142,6 +191,13 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  daily1_black1_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/daily/daily_hoodie_black_m.png')
+  daily2_burgundy_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/daily/daily_hoodie_burgundy_m.png')
+  daily3_grape_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/daily/daily_hoodie_grape_m.png')
+  daily4_green_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/daily/daily_hoodie_green_m.png')
+  product10.photos.attach([{io: daily1_black1_m_hood , filename: 'product10_black.png'},{io: daily2_burgundy_m_hood , filename: 'product10_burgundy.png'}, {io: daily3_grape_m_hood , filename: 'product10_grape.png'},{io: daily4_green_m_hood , filename: 'product10_green.png'}])
+
+
   product11 = Product.create!({
     name: "Ozed Hoodie Men",
     price: 74.00,
@@ -153,6 +209,13 @@ ActiveRecord::Base.transaction do
     gender: "M"
   })
 
+  ozed1_black1_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/ozed/ozed_hoodie_black_1_m.png')
+  ozed2_black2_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/ozed/ozed_hoodie_black_2_m.png')
+  ozed3_black3_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/ozed/ozed_hoodie_black_3_m.png')
+  ozed4_black4_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/ozed/ozed_hoodie_black_4_m.png')
+  product11.photos.attach([{io: ozed1_black1_m_hood , filename: 'product11_black1.png'},{io: ozed2_black2_m_hood , filename: 'product11_black2.png'}, {io: ozed3_black3_m_hood , filename: 'product11_black3.png'},{io: ozed4_black4_m_hood , filename: 'product11_black4.png'}])
+
+
   product12 = Product.create!({
     name: "Daily Range Hoodie Men",
     price: 65.00,
@@ -162,6 +225,13 @@ ActiveRecord::Base.transaction do
     category: "Mens-Hoddies",
     gender: "M"
   })
+
+  range1_black1_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/range/range_hoodie_black_1_m.png')
+  range2_black2_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/range/range_hoodie_black_2_m.png')
+  range3_purple1_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/range/range_hoodie_purple_1.png')
+  range4_purple2_m_hood = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/m-hoodie/range/range_hoodie_purple_2.png')
+  product12.photos.attach([{io: range1_black1_m_hood , filename: 'product12_black1.png'},{io: range2_black2_m_hood , filename: 'product12_black2.png'}, {io: range3_purple1_m_hood , filename: 'product12_purple1.png'},{io: range4_purple2_m_hood , filename: 'product12_purple2.png'}])
+
   #Womens
 
     product13 = Product.create!({
@@ -175,6 +245,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  adept1_black_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/adept/adept_jacket_black_w.png')
+  adept2_fadegreen_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/adept/adept_jacket_fadedgreen_w.png')
+  adept3_olivegreen_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/adept/adept_jacket_olivegreen_w.png')
+  adept4_pink_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/adept/adept_jacket_pink_w.png')
+  product13.photos.attach([{io: adept1_black_w , filename: 'product13_black.png'},{io: adept2_fadegreen_w , filename: 'product13_fadegreen.png'}, {io: adept3_olivegreen_w , filename: 'product13_olivegreen.png'},{io: adept4_pink_w , filename: 'product13_pink.png'}])
+
+
   product14 = Product.create!({
     name: "Yeti W Snowboard Jacket Women",
     price: 169.00 ,
@@ -185,6 +262,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
 
   })
+
+  yeti1_black_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/yeti/yeti_jacket_black_w.png')
+  yeti2_blue_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/yeti/yeti_jacket_blue_w.png')
+  yeti3_green_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/yeti/yeti_jacket_green_w.png')
+  yeti4_pineblack_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/yeti/yeti_jacket_pineblack_w.png')
+  product14.photos.attach([{io: yeti1_black_w , filename: 'product14_black.png'},{io: yeti2_blue_w , filename: 'product14_blue.png'}, {io: yeti3_green_w , filename: 'product14_green.png'},{io: yeti4_pineblack_w , filename: 'product14_pineblack.png'}])
+
 
   product15 = Product.create!({
     name: "Annok W Snowboard Jacket Women",
@@ -198,6 +282,13 @@ ActiveRecord::Base.transaction do
 
   })
 
+  annok1_black_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/annok/annok_jacket_black_w.png')
+  annok2_cumulus1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/annok/annok_jacket_cumulus_1_w.png')
+  annok3_cumulus2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/annok/annok_jacket_cumulus_2_w.png')
+  annok4_green_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-jacket/annok/annok_jacket_green_w.png')
+  product15.photos.attach([{io: annok1_black_w , filename: 'product15_black.png'},{io: annok2_cumulus1_w , filename: 'product15_cumulus1.png'}, {io: annok3_cumulus2_w , filename: 'product15_cumulus2.png'},{io: annok4_green_w , filename: 'product15_green.png'}])
+
+
   product16 = Product.create!({
     name: "Con W 2021 Snowboard Pants Women",
     price: 219.00 ,
@@ -209,6 +300,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  con1_black1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/yeti/yeti_pants_black_1_m.png')
+  con2_black2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/yeti/yeti_pants_black_2_w.png')
+  con3_black3_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/yeti/yeti_pants_black_3_w.png')
+  con4_black4_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/yeti/yeti_pants_black_4_w.png')
+  product16.photos.attach([{io: con1_black1_w , filename: 'product16_black1.png'},{io: con2_black2_w , filename: 'product16_black2.png'}, {io: con3_black3_w , filename: 'product16_black3.png'},{io: con4_black4_w , filename: 'product16_black4.png'}])
+
+
   product17 = Product.create!({
     name: " Notorious B.I.B W Snowboard Pants Women",
     price: 219.00 ,
@@ -218,6 +316,13 @@ ActiveRecord::Base.transaction do
     category: "Womens-Snowboard-Pants",
     gender: "W"
   })
+
+  notorious1_black_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/notorious/notorious_pants_black_w.png')
+  notorious2_green_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/notorious/notorious_pants_green_w.png')
+  notorious3_pink_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/notorious/notorious_pants_pink_w.png')
+  notorious4_violet_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/notorious/notorious_pants_violet_w.png')
+  product17.photos.attach([{io: notorious1_black_w , filename: 'product17_black.png'},{io: notorious2_green_w , filename: 'product17_green.png'}, {io: notorious3_pink_w , filename: 'product17_pink.png'},{io: notorious4_violet_w , filename: 'product17_violet.png'}])
+
   product18 = Product.create!({
     name: "Tigress W Snowboard Pants Women",
     price: 169.00,
@@ -229,6 +334,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  tigress1_black_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/tigress/tigress_pants_black_w.png')
+  tigress2_lightgrey1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/tigress/tigress_pants_lightgrey_1_w.png')
+  tigress3_lightgrey2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/tigress/tigress_pants_lightgrey_2_w.png')
+  tigress4_walnut_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-pants/tigress/tigress_pants_walnut_w.png')
+  product18.photos.attach([{io: tigress1_black_w , filename: 'product18_black.png'},{io: tigress2_lightgrey1_w , filename: 'product18_lightgrey1.png'}, {io: tigress3_lightgrey2_w , filename: 'product18_lightgrey2.png'},{io: tigress4_walnut_w , filename: 'product18_walnut.png'}])
+
+
   product19 = Product.create!({
     name: "Regular Range T-shirt Women",
     price: 29.00 ,
@@ -239,6 +351,11 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  range1_black1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/range/range_tshirt_black_1_w.png')
+  range2_black2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/range/range_tshirt_black_2_w.png')
+  range3_purple_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/range/range_tshirt_purple_w.png')
+  range4_white_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/range/range_tshirt_white_w.png')
+  product19.photos.attach([{io: range1_black1_w , filename: 'product19_black1.png'},{io: range2_black2_w , filename: 'product19_black2.png'}, {io: range3_purple_w , filename: 'product19_purple.png'},{io: range4_white_w , filename: 'product19_white.png'}])
 
   product20 = Product.create!({
     name: "Regular Rose T-shirt Women",
@@ -250,6 +367,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  rose1_black1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/rose/rose_tshirt_black_1_w.png')
+  rose2_black2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/rose/rose_tshirt_black_2_w.png')
+  rose3_white1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/rose/rose_tshirt_white_1_w.png')
+  rose4_white2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/rose/rose_tshirt_white_2_w.png')
+  product20.photos.attach([{io: rose1_black1_w , filename: 'product20_black1.png'},{io: rose2_black2_w , filename: 'product20_black2.png'}, {io: rose3_white1_w , filename: 'product20_white1.png'},{io: rose4_white2_w , filename: 'product20_white2.png'}])
+
+
   product21 = Product.create!({
     name: "Regular Beak T-shirt Women",
     price: 29.00 ,
@@ -259,6 +383,13 @@ ActiveRecord::Base.transaction do
     category: "Womens-T-shirts",
     gender: "W"
   })
+
+  beak1_green1_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/beak/beak_tshirt_1_w.png')
+  beak2_green2_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/beak/beak_tshirt_2_w.png')
+  beak3_green3_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/beak/beak_tshirt_3_w.png')
+  beak4_green4_w = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-tshirt/beak/break_shirt_4_w.png')
+  product21.photos.attach([{io: beak1_green1_w , filename: 'product21_green1.png'},{io: beak2_green2_w , filename: 'product21_green2.png'}, {io: beak3_green3_w , filename: 'product21_green3.png'},{io: beak4_green4_w , filename: 'product21_green4.png'}])
+
 
   product22 = Product.create!({
     name: "Ozed W Hoodie Women",
@@ -271,6 +402,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  ozed1_black1_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/ozed/ozed_hoodie_black_1_w.png')
+  ozed2_black2_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/ozed/ozed_hoodie_black_2_w.png')
+  ozed3_black3_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/ozed/ozed_hoodie_black_3_w.png')
+  ozed4_black4_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/ozed/ozed_hoodie_black_4_w.png')
+  product22.photos.attach([{io: ozed1_black1_w_hoodie , filename: 'product22_black1.png'},{io: ozed2_black2_w_hoodie , filename: 'product22_black2.png'}, {io: ozed3_black3_w_hoodie , filename: 'product22_black3.png'},{io: ozed4_black4_w_hoodie , filename: 'product22_black4.png'}])
+
+
   product23 = Product.create!({
     name: "Regular Rose Hoodie Women",
     price: 65.00,
@@ -282,6 +420,13 @@ ActiveRecord::Base.transaction do
     gender: "W"
   })
 
+  rose1_bleachedblack1_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/rose/rose_hoodie_bleachedblack_1_w.png')
+  rose2_bleachedblack2_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/rose/rose_hoodie_bleachedblack_2_w.png')
+  rose3_black1_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/rose/rose_hoodie_black_1_w.png')
+  rose4_black2_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/rose/rose_hoodie_black_2_w.png')
+  product23.photos.attach([{io: rose1_bleachedblack1_w_hoodie , filename: 'product23_bleachedblack1.png'},{io: rose2_bleachedblack2_w_hoodie , filename: 'product23_bleachedblack2.png'}, {io: rose3_black1_w_hoodie , filename: 'product23_black1.png'},{io: rose4_black2_w_hoodie , filename: 'product23_black2.png'}])
+
+
   product24 = Product.create!({
     name: "Regular Range Hoodie Women",
     price: 65.00,
@@ -291,6 +436,13 @@ ActiveRecord::Base.transaction do
     category: "Womens-Hoddies",
     gender: "W"
   })
+
+  range1_grape1_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/range/range_hoodie_1_w.png')
+  range2_grape2_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/range/range_hoodie_2_w.png')
+  range3_grape3_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/range/range_hoodie_3_w.png')
+  range4_grape4_w_hoodie = URI.open('https://sick-snow.s3.us-west-2.amazonaws.com/sick_snow_image/w-hoodie/range/range_hoodie_4_w.png')
+  product24.photos.attach([{io: range1_grape1_w_hoodie , filename: 'product24_grape1.png'},{io: range2_grape2_w_hoodie , filename: 'product24_grape2.png'}, {io: range3_grape3_w_hoodie , filename: 'product24_grape3.png'},{io: range4_grape4_w_hoodie , filename: 'product24_grape4.png'}])
+
 
   puts 'done'
 end

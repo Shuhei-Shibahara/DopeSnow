@@ -38,7 +38,7 @@ const CategoryDropDown= () => {
             </li>
             <li>
               <div className="div_individual_category">
-                <Link to="/products/M/Mens-T-shirts" className="category_link">
+                <Link to="/products/M/Mens-Hoddies" className="category_link">
                   <div className="image_div">
                     <img
                       className="category_image"
@@ -52,7 +52,7 @@ const CategoryDropDown= () => {
             </li>
             <li>
               <div className="div_individual_category">
-                <Link to="/products/M/Mens-Hoddies" className="category_link">
+                <Link to="/products/M/Mens-T-shirts" className="category_link">
                   <div className="image_div">
                     <img
                       className="category_image"

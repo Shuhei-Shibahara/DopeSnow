@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCartItems, getCartItems } from "../../store/cartItems";
+import { deleteCartItem, fetchCartItems, getCartItems } from "../../store/cartItems";
 import './CartIndex.css'
 import CartItem from "./CartItem";
 function CartIndex() {
@@ -19,6 +19,14 @@ function CartIndex() {
       total += price
     }
     return total
+  }
+
+  const handleCheckout = () => {
+    while (items.length > 0){
+      let item = items.pop()
+      dispatch(deleteCartItem(item.id))
+
+    }
   }
 
 
@@ -45,6 +53,9 @@ function CartIndex() {
                   )}
               </div>
             </div>
+          </div>
+          <div className='checkout_container'>
+            <button onClick={handleCheckout} className="checkout_button">Checkout</button>
           </div>
         </div>
       </div>
