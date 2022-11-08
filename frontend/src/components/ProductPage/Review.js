@@ -1,5 +1,26 @@
 import './Review.css'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReviews, getReviews } from '../../store/reviews';
+
+
 const Review = ({productId}) => {
+  const dispatch = useDispatch();
+  const reviews = useSelector(getReviews)
+  
+  useEffect(()=>{
+    dispatch(fetchReviews(productId))
+  },[dispatch])
+
+  // const createRating = () => {
+  //   const ratingStars = []
+  //   for (let i=0; i < productId.rating; i++){
+  //     ratingStars.push(<img src={star} className="review_star_image" />)
+  //   }
+
+  //   <div className={`${value}-stars`}></div>
+    
+  // }
 
   return(
    <div className="review_whole_container">
@@ -17,14 +38,27 @@ const Review = ({productId}) => {
       <div className='all_users_review_text_container'>
         <div className='all_users_review_text_inside_container'>
           <div className='all_users_review_title'>Reviews</div>
-          {/* {insert review here} */}
-          <section className='individual_review_main_container'>
-            <header className='container_for_stars'>
-              <div className='stars_position_container'>
 
+          {reviews.map(review =>
+            <section className='individual_review_main_container'>
+              <header className='container_for_stars'>
+                <div className='stars_position_container'>
+                  <div>
+                    <div className='star_box_container'>
+                      {/* <img className={`stars_${review.rating}`} /> */}
+                      <img className={`stars_5`} />
+                    </div>
+                  </div>
+                </div>
+              </header>
+              <div className='review_body_container'>
+                <div className='review_main_text'>{review.body}</div>
               </div>
-            </header>
-          </section>
+              <div className='review_author_container'>
+                <div className='review_author_text'>- author 1</div>
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>

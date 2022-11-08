@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from "react";
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import dope from "../../images/dope.png"
 import CategoryDropDown from './CategoryDropDown';
 import CartIndexModal from './CartIndexModal';
+import { fetchCartItems, getCartItems } from '../../store/cartItems';
 
 function Navigation({showModal, setShowModal}) {
   const sessionUser = useSelector(state => state.session.user);
-  // const [isShown, setIsShown] = useState(false);
+
 
   let sessionLinks;
   if (sessionUser) {

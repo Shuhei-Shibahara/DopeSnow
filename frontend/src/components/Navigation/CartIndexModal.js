@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
+import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import CartIndex from './CartIndex';
 
 function CartIndexModal({showModal, setShowModal}) {
+  const dispatch = useDispatch();
+  const cartItems = useSelector(getCartItems)
 
+  useState(() => {
+    dispatch(fetchCartItems())
+  }, [dispatch])
   return (
     <>
+    <div>
       <button className="nav_button_cart" onClick={() => setShowModal(true)} >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g stroke="none" strokeWidth="1" fillRule="evenodd">
             <g transform="translate(-178.000000, -15.000000)">
               <g transform="translate(178.000000, -241.000000)">
                 <g transform="translate(0.000000, 256.000000)">
@@ -24,11 +32,15 @@ function CartIndexModal({showModal, setShowModal}) {
           </g>
         </svg>
       </button>
+      {cartItems.length !== 0 &&
+        <div className="cartItem_quantity">{cartItems.length}</div>
+      }
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CartIndex />
         </Modal>
       )}
+    </div>
     </>
   );
 }

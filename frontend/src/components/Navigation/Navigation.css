@@ -195,3 +195,23 @@ img.logo{
 .gender_button_nav{
   position: relative;
 }
+
+.cartItem_quantity{
+  min-width: 14px;
+  min-height: 14px;
+  background-color: blue;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 15px;
+  right: 43px;
+  border-radius: 50%;
+  border-width: 0;
+  padding: 1.5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  line-height: normal;
+  box-sizing: content-box !important;
+}

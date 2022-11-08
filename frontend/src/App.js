@@ -8,6 +8,7 @@ import HomePage from './components/HomePage'
 import ProductIndexPage from './components/ProductIndexPage'
 import ProductPage from './components/ProductPage'
 import { useState } from 'react';
+
 function App() {
 
   const [showModal, setShowModal] = useState(false);
