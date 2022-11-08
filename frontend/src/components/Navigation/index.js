@@ -6,7 +6,6 @@ import './Navigation.css';
 import dope from "../../images/dope.png"
 import CategoryDropDown from './CategoryDropDown';
 import CartIndexModal from './CartIndexModal';
-import { fetchCartItems, getCartItems } from '../../store/cartItems';
 
 function Navigation({showModal, setShowModal}) {
   const sessionUser = useSelector(state => state.session.user);

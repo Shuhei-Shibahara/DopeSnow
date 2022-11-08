@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCartItem, updateCartItem } from "../../store/cartItems";
-import { useState } from "react";
 
 export default function CartItem({cartItem}){
   const dispatch = useDispatch();
-  
-  
-
   const handleIncrease = () => {
     const updateItem = {
       ...cartItem, quantity: cartItem.quantity + 1
@@ -30,13 +26,13 @@ export default function CartItem({cartItem}){
   if(cartItem === undefined) {
     return null
   }
-
+  
 
 
   return(
     <div className="individual_shopping_item_container">
       <div className="shopping_cart_main_photo_container">
-        <Link to={`/product/${cartItem.id}`} className='link_back_to_product'>
+        <Link to={`/product/${cartItem.productId}`} className='link_back_to_product'>
           <div className="inside_photo_container">
             <img src={cartItem.imgUrls[0]} className="cart_product_image" />
           </div>

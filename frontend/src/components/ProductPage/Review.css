@@ -155,3 +155,8 @@
   content: url('../../images/star.png');
   height: 25px;
 }
+
+.star_box_container{
+  display: flex;
+  justify-content: space-between;
+}

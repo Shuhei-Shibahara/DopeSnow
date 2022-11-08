@@ -14,7 +14,7 @@ const CategoryDropDown= () => {
                   <div className="image_div">
                     <img 
                       className="category_image"
-                      alt= "Jackets" 
+                      alt= "Jackets" // {val}
                       src= "https://ridestore.imgix.net/catalog/product//E/8/E8412_100.JPG?fit=crop&amp;w=38&amp;q=60&amp;dpr=2&amp;usm=15&amp;fm=avif&amp;crop=entropy&amp;h=38" 
                       />
                   </div>

@@ -3,37 +3,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import CartIndex from './CartIndex';
+import basket from '../../images/shopping_basket.png'
 
 function CartIndexModal({showModal, setShowModal}) {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems)
-
+  
+  
+  
   useState(() => {
     dispatch(fetchCartItems())
   }, [dispatch])
+  
+  const quantity = () => {
+    let total = 0;
+    cartItems.forEach(item => {
+      total += item.quantity
+    })
+    return total * cartItems.length
+  }
+ 
+
   return (
     <>
     <div>
       <button className="nav_button_cart" onClick={() => setShowModal(true)} >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <g stroke="none" strokeWidth="1" fillRule="evenodd">
-            <g transform="translate(-178.000000, -15.000000)">
-              <g transform="translate(178.000000, -241.000000)">
-                <g transform="translate(0.000000, 256.000000)">
-                  <g transform="translate(0.000000, 5.000000)">
-                  </g>
-                  <rect stroke="currentColor" strokeWidth="2" x="1" y="6" width="18" height="13">
-                  </rect>
-                  <path d="M5.03403559,6 L14.9659644,6 C14.7190324,2.55483332 13.1230068,1 10,1 C6.87699319,1 5.2809676,2.55483332 5.03403559,6 Z" stroke="currentColor" strokeWidth="2">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </g>
-        </svg>
+          <img src={basket} width="26" height="26" />
       </button>
       {cartItems.length !== 0 &&
-        <div className="cartItem_quantity">{cartItems.length}</div>
+        <div className="cartItem_quantity">{quantity()}</div>
       }
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

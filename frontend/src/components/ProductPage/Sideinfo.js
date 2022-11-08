@@ -2,44 +2,48 @@ import './Sideinfo.css'
 import star from "../../images/star.png"
 import favorite from '../../images/favorite_icon.png'
 import { useState, useEffect } from 'react'
-import { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCartItem, createCartItem } from '../../store/cartItems'
+import { createCartItem, updateCartItem, getCartItems } from '../../store/cartItems'
 
 const Sideinfo = ({product, setShowModal}) => {
   const dispatch = useDispatch();
   const colors = product.color.split(' ') 
   const sizes = product.size.split(' ')
   const user = useSelector(state => state.session.user)
-  const cartItem = useSelector(getCartItem(product.id))
+  const cartItems = useSelector(getCartItems)
 
   const [pickedColor, setPickedColor] = useState(colors[0])
   const [selectedColor, setSelectedColor] = useState(0)
   const [pickedSize, setPickedSize] = useState(sizes[2]) 
   const [selectedSize, setSelectedSize] = useState(2)
 
-console.log(product)
   const handleAddCart = (e) => {
     e.preventDefault();
-
     if(!user) return null;
-
-    const userId = user.id
-
-    const newItem = {
-      cartItem: {
-        productId: product.id,
-        userId: user.id,
-        quantity: 1,
-        name: product.name,
-        price: product.price,
-        gender: product.gender,
-        color: pickedColor,
-        size: pickedSize
+    
+    const updatedCartItem = cartItems.find(item => item.productId === product.id)
+    
+    
+    if (!updatedCartItem){
+      const newItem = {
+        cartItem: {
+          productId: product.id,
+          userId: user.id,
+          quantity: 1,
+          name: product.name,
+          price: product.price,
+          gender: product.gender,
+          color: pickedColor,
+          size: pickedSize
+        }
       }
+      setShowModal(true)
+     return dispatch(createCartItem(newItem))
+    } else{
+      setShowModal(true)
+      const newItem = {...updatedCartItem, quantity: updatedCartItem.quantity + 1}
+      return dispatch(updateCartItem(newItem))
     }
-    setShowModal(true)
-   return dispatch(createCartItem(newItem))
   }
   
 
@@ -77,7 +81,7 @@ console.log(product)
         <div className='side_bar_clicked_color'>{pickedColor}</div>
         <div className='side_bar_color_circle_main'>
           <div className='side_bar_color_container'>
-            {colors.map((color, i) =>
+          {colors.map((color, i) =>
             (<>
               <div className='color_container'>
                 <button onClick={handleColorChange(color, i)} className='future_onclick_for_color'>

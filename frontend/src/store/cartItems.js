@@ -35,6 +35,7 @@ export const removeItem = (cartItemId) => {
   }
 
   export const getCartItem = (productId) => state => {
+
     if (!state.cartItems){
       return []
     } else {
