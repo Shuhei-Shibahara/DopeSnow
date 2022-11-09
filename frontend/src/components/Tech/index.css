@@ -9,11 +9,15 @@
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 } */
 
+ol{
+  padding-inline-start: 0;
+}
+
 .tech_main_container{
   order: 3;
   margin-top: 74px;
-  margin-left: 174px;
-  margin-right: 170px;
+  margin-left: 472px;
+  margin-right: 472px;
   margin-bottom: 150px;
   }
 
