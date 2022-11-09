@@ -9,15 +9,16 @@
   font-family: 'Inter', sans-serif;
 }
 
-.video_container{
-  display: block;
-  max-width: 1530px;
-  margin: auto;
-  position: relative;
+.main_container{
+  margin: 110px 259px 0;
 }
 
-.main_container {
-  margin: 40px 43px 0;
+.video_container{
+  display: block;
+  max-width: 968px;
+  margin-bottom: 60px;
+  min-height: 227.81px;
+  position: relative;
 }
 
 #video{

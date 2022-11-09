@@ -1,9 +1,19 @@
+/* ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: thin;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
 
 .tech_main_container{
   order: 3;
   margin-top: 74px;
   margin-left: 174px;
-  margin-right: 400px;
+  margin-right: 170px;
   margin-bottom: 150px;
   }
 
@@ -13,6 +23,8 @@
     flex-wrap: nowrap;
     margin-top: 30px;
     padding-bottom: 25px;
+    overflow-x: scroll;
+    scrollbar-width: thin
   }
 
   .softshell_info_container{
@@ -36,3 +48,40 @@
     font-weight: 300;
     margin-top: 19px;
   }
+
+  .tech_information_main_container{
+    display: flex;
+  }
+
+  .tech_info_icon_individual_container{
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .icon_text{
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 13px;
+    font-weight: 200;
+    margin-top: 3px;
+    margin-left: 10px;
+  }
+
+  .icon_num{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    text-align: left;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 8px;
+    margin-left: 10px;
+
+  }
+
+.bottom_of_icon{
+  margin-bottom: 60px;
+}
+
