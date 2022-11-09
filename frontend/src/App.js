@@ -8,6 +8,7 @@ import HomePage from './components/HomePage'
 import ProductIndexPage from './components/ProductIndexPage'
 import ProductPage from './components/ProductPage'
 import { useState } from 'react';
+import CheckOut from './components/Checkout';
 
 function App() {
 
@@ -47,6 +48,10 @@ function App() {
 
             <Route path="/cart">
               <ProfilePage />
+            </Route>
+
+            <Route path="/checkout">
+              <CheckOut />
             </Route>
           </Switch>
     </>

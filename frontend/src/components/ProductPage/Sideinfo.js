@@ -93,10 +93,10 @@ const Sideinfo = ({product, setShowModal}) => {
             (<>
               <div className='color_container'>
                 <button onClick={handleColorChange(color, i)} className='future_onclick_for_color'>
-
                   <div className={`color_image_styling ${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}>
                   {/* <div className={`color_image_styling_${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}> */}
-                    <img src={product.imgUrls[i]} className='color_image' title={color} />
+                    {/* <img src={product.imgUrls[i]} className='color_image' title={color} /> */}
+                  <img src='https://www.dopesnow.com/images/H0857_06_OAnp3GT.jpg?w=525&dpr=2' className='color_image' title={color} />
                   </div>
                 </button>
                 <div className='check_mark'></div>

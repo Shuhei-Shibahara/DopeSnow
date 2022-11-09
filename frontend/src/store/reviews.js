@@ -77,7 +77,7 @@ export const updateReview = (review) => async dispatch => {
   })
   if (res.ok) {
     const updatedReview = await res.json();
-    dispatch(receiveReview(updateReview))
+    dispatch(receiveReview(updatedReview))
   }
 }
 

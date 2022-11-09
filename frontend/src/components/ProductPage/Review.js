@@ -1,10 +1,11 @@
 import './Review.css'
-import { useEffect, useRef } from 'react';
+import { useRef,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteReview, fetchReviews, getReviews } from '../../store/reviews';
+import ReactStars from "react-rating-stars-component";
+import { deleteReview, getReviews } from '../../store/reviews';
 import ReviewSubmit from './ReviewSubmit';
-import edit from '../../images/edit.png'
-import trash from '../../images/trash.png'
+import ReviewDisplay from './ReviewDisplay'
+
 
 
 
@@ -12,23 +13,12 @@ const Review = ({productId}) => {
   const dispatch = useDispatch();
   const reviews = useSelector(getReviews)
   const user = useSelector(state => state.session.user)
-  const reviewPage = useRef('#review')
 
-  const handleDeleteReview = (review) => {
-    if (user.id === review.userId){
-      dispatch(deleteReview(review.id))
-    }
-  }
-
-  const handleUpdateReview = (review) => {
-    // if (user.id === review.userId) {
-    //   let 
-    // }
-  }
+  
 
 
   return(
-   <div ref={reviewPage} className="review_whole_container">
+   <div className="review_whole_container">
     <div className="what_people_text">What people are saying</div>
     <h2 className='rating_review_text'>Ratings & Reviews</h2>
     <div>
@@ -45,25 +35,10 @@ const Review = ({productId}) => {
           {reviews.length > 0 && 
             <div className='all_users_review_title'>Reviews</div>  
           }
-          {reviews.map(review =>
-            <section className='individual_review_main_container'>
-              <header className='container_for_stars'>
-                <div className='star_box_container'>
-                  <img className={`stars_${review.rating}`} />
-                  <div>
-                    <img src={edit} height="24px" width="24px" onClick={()=> handleUpdateReview(review)}/>
-                    <img src={trash} onClick={() => handleDeleteReview(review)} />
-                  </div>
-                </div>
-              </header>
-              <div className='review_body_container'>
-                <div className='review_main_text'>{review.body}</div>
-              </div>
-              <div className='review_author_container'>
-                <div className='review_author_text'>- {review.name}</div>
-              </div>
-            </section>
+          {reviews.map(review =>          
+            <ReviewDisplay review={review} productId={productId}/>
           )}
+          
         </div>
       </div>
     </div>
