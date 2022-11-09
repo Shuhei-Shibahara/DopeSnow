@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Link } from "react-router-dom";
 import './Navigation.css'
+import { fetchCartItems } from "../../store/cartItems";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    dispatch(fetchCartItems())
   };
 
   return (

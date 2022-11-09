@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -47,7 +47,9 @@ if (
   sessionStorage.getItem("currentUser") === null ||
   sessionStorage.getItem("X-CSRF-Token") === null
 ) {
+  // store.dispatch(sessionActions.restoreSession()).then(renderApplication);
   store.dispatch(sessionActions.restoreSession()).then(renderApplication);
 } else {
-  renderApplication();
+  // debugger
+  store.dispatch(cartActions.fetchCartItems(store.getState().session.user.id)).then(renderApplication())
 }

@@ -38,11 +38,9 @@ const ProductPage = ({showModal, setShowModal}) => {
                     <div className="inner_container">
                       <div className="change_image_div">
                         <div className="image_container">
-                          {/* {product.imgUrls.map(imgurl =>
-                            <img src={imgurl} className="main_image" />
-
-                            )} */}
-                          <img src={product.imgUrls[0]} className="main_image" />
+                       
+                          {/* <img src={product.imgUrls[0]} className="main_image" /> */}
+                          <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" />
 
 
 

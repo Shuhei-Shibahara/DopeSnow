@@ -4,7 +4,7 @@ class Api::CartItemsController < ApplicationController
 
   def create
     @cart_item = CartItem.new(cart_params)
-    if @cart_item&.save
+    if @cart_item&.save 
       render '/api/cart_items/show'
     else
       render json: {errors: ['Could not create a cart']}, status: 422;
@@ -12,9 +12,10 @@ class Api::CartItemsController < ApplicationController
   end
 
   def index
-    user_id = current_user.id
-    @cart_items = CartItem.where(user_id: user_id)
-    render '/api/cart_items/index'
+      user_id = current_user.id
+      @cart_items = CartItem.where(user_id: user_id)
+      render '/api/cart_items/index'
+  
   end
 
   def update

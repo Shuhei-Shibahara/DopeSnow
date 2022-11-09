@@ -4,6 +4,7 @@ import favorite from '../../images/favorite_icon.png'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createCartItem, updateCartItem, getCartItems } from '../../store/cartItems'
+import { Link } from 'react-router-dom'
 
 const Sideinfo = ({product, setShowModal}) => {
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ const Sideinfo = ({product, setShowModal}) => {
     e.preventDefault();
     if(!user) return null;
     const updatedCartItem = cartItems.find(item => item.productId === product.id)
-    
     
     if (!updatedCartItem){
       const newItem = {
@@ -76,13 +76,13 @@ const Sideinfo = ({product, setShowModal}) => {
           <div className="side_bar_name">{wordReplace()}</div>
           <div className="side_bar_logo">Sick</div>
           <div className="side_bar_review_main_container">
-            <div className='side_bar_review_styling'>
+            <Link to='/' className='side_bar_review_styling'>
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
-            </div>
+            </Link>
           </div>
         </div>
         <div className='side_bar_color_title'>Color</div>

@@ -1,5 +1,5 @@
 import './Review.css'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteReview, fetchReviews, getReviews } from '../../store/reviews';
 import ReviewSubmit from './ReviewSubmit';
@@ -12,7 +12,7 @@ const Review = ({productId}) => {
   const dispatch = useDispatch();
   const reviews = useSelector(getReviews)
   const user = useSelector(state => state.session.user)
-
+  const reviewPage = useRef('#review')
 
   const handleDeleteReview = (review) => {
     if (user.id === review.userId){
@@ -28,7 +28,7 @@ const Review = ({productId}) => {
 
 
   return(
-   <div className="review_whole_container">
+   <div ref={reviewPage} className="review_whole_container">
     <div className="what_people_text">What people are saying</div>
     <h2 className='rating_review_text'>Ratings & Reviews</h2>
     <div>

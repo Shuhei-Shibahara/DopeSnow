@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
@@ -9,18 +9,16 @@ function CartIndexModal({showModal, setShowModal}) {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems)
   
-  
-  
-  useState(() => {
-    dispatch(fetchCartItems())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchCartItems())
+  // }, [dispatch])
   
   const quantity = () => {
     let total = 0;
     cartItems.forEach(item => {
       total += item.quantity
     })
-    return total * cartItems.length
+    return total 
   }
  
 

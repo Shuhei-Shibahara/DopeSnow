@@ -1,3 +1,4 @@
+import { fetchCartItems } from "./cartItems";
 import csrfFetch, { storeCSRFToken } from "./csrf";
 
 const RECEIVE_USER = "users/RECEIVE_USER";
@@ -72,6 +73,9 @@ export const restoreSession = () => async dispatch => {
   const data = await res.json();
   storeCurrentUser(data.user)
   dispatch(receiveUser(data.user));
+  if (data.user){
+    dispatch(fetchCartItems(data.user.id))
+  }
   return res
 }
 

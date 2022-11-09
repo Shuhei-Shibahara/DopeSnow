@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./LoginForm.css";
+import { fetchCartItems } from "../../store/cartItems";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -13,8 +14,13 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
+  useEffect(()=>{
+    if (sessionUser){
+      dispatch(fetchCartItems(sessionUser.id))
+    }
+  },[sessionUser])
+  
   if (sessionUser) return <Redirect to="/" />;
-
   const handleSubmit = (e) => {
    
     e.preventDefault();

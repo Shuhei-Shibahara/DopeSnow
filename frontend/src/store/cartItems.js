@@ -1,4 +1,4 @@
-import csrfFetch from "./csrf";
+import csrfFetch, { storeCSRFToken } from "./csrf";
 
 const RECEIVE_ITEMS = 'cartItem/RECEIVE_ITEMS'
 const RECEIVE_ITEM = 'cartItem/RECEIVE_ITEM';
@@ -43,14 +43,17 @@ export const removeItem = (cartItemId) => {
     }
   }
 
-export const fetchCartItems = () => async dispatch => {
-  const res = await csrfFetch(`/api/cart_items`)
-  if (res.ok){
-    const cartItems = await res.json();
-    dispatch(receiveItems(cartItems))
+export const fetchCartItems = (userId) => async dispatch => {
+  if (!userId){
+    dispatch(receiveItems({}))
+  }else{
+    const res = await csrfFetch(`/api/cart_items`)
+    if (res.ok){
+      const cartItems = await res.json();
+      dispatch(receiveItems(cartItems))
+    }
   }
 }
-
 
 export const createCartItem = (cartItem) => async dispatch => {
   const res = await csrfFetch(`/api/cart_items`, {

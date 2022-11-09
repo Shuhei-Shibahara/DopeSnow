@@ -10,7 +10,7 @@ function CartIndex() {
   const user = useSelector(state => state.session.user)
 
   useEffect(()=>{
-    dispatch(fetchCartItems())
+    dispatch(fetchCartItems(user.id))
   },[dispatch])
   
   const getTotal = () => {
