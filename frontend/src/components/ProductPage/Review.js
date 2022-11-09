@@ -20,11 +20,11 @@ const Review = ({productId}) => {
     }
   }
 
-  // const handleUpdateReview = (review) => {
-  //   if (user.id === review.userId) {
-  //     let 
-  //   }
-  // }
+  const handleUpdateReview = (review) => {
+    // if (user.id === review.userId) {
+    //   let 
+    // }
+  }
 
 
   return(

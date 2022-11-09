@@ -14,7 +14,7 @@ const ReviewSubmit = ({productId}) => {
     dispatch(fetchReviews(productId))
   },[dispatch])
 
-  const thirdExample = {
+  const starRating = {
     size: 35,
     count: 5,
     isHalf: false,
@@ -50,7 +50,7 @@ const ReviewSubmit = ({productId}) => {
                 <div className='stars_position_container'>
                   <div>
                     <div className='star_box_container'>
-                    <ReactStars {...thirdExample} />
+                    <ReactStars {...starRating} />
                     </div>
                   </div>
                 </div>

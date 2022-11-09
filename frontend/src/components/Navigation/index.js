@@ -45,11 +45,15 @@ function Navigation({showModal, setShowModal}) {
             <ol>
               <div className='gender_link_wrapper'>
                 <Link className="gender_link_men">Men</Link>
-                <CategoryDropDown />
+                <CategoryDropDown gender={'m'}/>
               </div>
               <div>
+                <div className='gender_link_wrapper'>
+
                 <Link className="gender_link_women">Women</Link>
-                <CategoryDropDown />
+                <CategoryDropDown gender={'w'}/>
+                </div>
+
               </div>
             </ol>
           </nav>

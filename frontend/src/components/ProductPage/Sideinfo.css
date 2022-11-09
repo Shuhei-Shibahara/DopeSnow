@@ -10,7 +10,7 @@ ul{
   left: 50%;
   right: inherit;
   position: absolute;
-  top: 235px;
+  top: 205px;
   box-shadow: 0 8px 20px hsla(0, 0%, 0%, .06);
   z-index: 30;
   display: block;
@@ -120,7 +120,7 @@ ul{
 }
 
 .check_mark{
-  position: absolute;
+  position: hidden;
   box-sizing: border-box;
   height: 5px;
   width: 9px;
@@ -133,6 +133,23 @@ ul{
   transform: rotate(-45deg);
 }
 
+/* .future_onclick_for_color::after {
+  content: "";
+  display: inline-block;
+  display: hidden;
+  background: hsl(0, 0%, 17.65%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  font-size: 15px;
+  text-align: center;
+  line-height: 20.5px;
+  width: 19px;
+  height: 19px;
+  border: solid 1px hsl(0, 0%, 17.65%);
+} */
 
 .color_image_styling{
   width: 48px;
@@ -201,6 +218,7 @@ ul{
   font-size: 13px;
   font-weight: 400;
   font-family: 'Inter', sans-serif;
+  background-color: rgb(236, 236, 236);
   border: solid 1px #f6f6f6;
   cursor: pointer;
   transition: .1s ease;
@@ -313,29 +331,15 @@ ul{
   margin-right: 10px;
   border-radius: 100%;
 }
-/* .future_onclick_for_color::after {
-  content: "";
-  display: inline-block;
-  background: hsl(0, 0%, 17.65%);
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: hsl(0, 0%, 100%);
-  border-radius: 50%;
-  font-size: 15px;
-  text-align: center;
-  line-height: 20.5px;
-  width: 19px;
-  height: 19px;
-  border: solid 1px hsl(0, 0%, 17.65%);
-} */
+
 
 .selected_color{
   border:hsl(0, 0%, 0%) 1px solid
 }
 
 .selected_size {
-  border: 1px black solid;
+  color: white;
+  background-color: black;
 }
 
 

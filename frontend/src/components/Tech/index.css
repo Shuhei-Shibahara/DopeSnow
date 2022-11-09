@@ -1,0 +1,38 @@
+
+.tech_main_container{
+  order: 3;
+  margin-top: 74px;
+  margin-left: 174px;
+  margin-right: 400px;
+  margin-bottom: 150px;
+  }
+
+  .tech_information_main_container{
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    padding-bottom: 25px;
+  }
+
+  .softshell_info_container{
+    margin-right: 30px;
+    overflow: break-word;
+  }
+
+  .tech_title{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .softshell_text{
+    text-align: left;
+    max-width: 272px;
+    line-height: 23px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px !important;
+    font-weight: 300;
+    margin-top: 19px;
+  }

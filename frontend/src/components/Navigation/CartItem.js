@@ -42,7 +42,7 @@ export default function CartItem({cartItem}){
         <div className="shopping_cart_text_container_styling">
           <div className="shopping_cart_company_name">SICK</div>
           <h1 className="shopping_cart_product_name" >{cartItem.name}</h1>
-          <div className="shopping_cart_product_price"><span>{cartItem.price} USD</span></div>
+          <div className="shopping_cart_product_price"><span>{cartItem.price * cartItem.quantity} USD</span></div>
           <div>
             <div className="shopping_cart_size_quantity_container">
               <div className="quantity_container">

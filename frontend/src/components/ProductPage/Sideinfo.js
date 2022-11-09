@@ -17,10 +17,18 @@ const Sideinfo = ({product, setShowModal}) => {
   const [pickedSize, setPickedSize] = useState(sizes[2]) 
   const [selectedSize, setSelectedSize] = useState(2)
 
+  const REMOVEWORDS = ['Snowboard Jacket Men', 'Snowboard Pants Men', 'Hoodie Men', 'T-shirt Men', 'Snowboard Jacket Women', 'Snowboard Pants Women', 'Hoodie Women', 'T-shirt Women']
+
+  const wordReplace = () => {
+    let name = product.name
+    REMOVEWORDS.forEach(word => {
+      name = name.replace(word,'')
+    })
+    return name
+  }
   const handleAddCart = (e) => {
     e.preventDefault();
     if(!user) return null;
-    
     const updatedCartItem = cartItems.find(item => item.productId === product.id)
     
     
@@ -65,7 +73,7 @@ const Sideinfo = ({product, setShowModal}) => {
     <>
       <div className="main_side_container">
         <div className='side_bar_name_container'>
-          <div className="side_bar_name">Yeti</div>
+          <div className="side_bar_name">{wordReplace()}</div>
           <div className="side_bar_logo">Sick</div>
           <div className="side_bar_review_main_container">
             <div className='side_bar_review_styling'>
@@ -87,6 +95,7 @@ const Sideinfo = ({product, setShowModal}) => {
                 <button onClick={handleColorChange(color, i)} className='future_onclick_for_color'>
 
                   <div className={`color_image_styling ${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}>
+                  {/* <div className={`color_image_styling_${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}> */}
                     <img src={product.imgUrls[i]} className='color_image' title={color} />
                   </div>
                 </button>
