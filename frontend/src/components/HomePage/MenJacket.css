@@ -1,0 +1,55 @@
+
+.main_homepage_jacket_container{
+    margin: 50px 259px;
+}
+
+.homepage_jacket_content_container{
+  display: flex;
+  border: 2px solid hsl(0, 0%, 92.94%);
+  background-color: white;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.homepage_jacket_text_container{
+  padding: 201px 50px 201px 100px;
+  flex-grow: 1;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.dope_legacy_text{
+  font-size: 38px;
+  line-height: 58px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-family: 'inter', sans-serif;
+}
+
+.men_snowboard_jacket_text{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: .3px;
+  line-height: 20px;
+}
+
+.men_snowboard_link_main_page{
+  padding: 13.5px 41.5px;
+  font-weight: 800;
+  margin-top: 34px;
+  background-color: black;
+  outline: 0;
+  display: inline-block;
+  border-radius: 1px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.men_snowboard_link_image_container{
+  background-color: #e2e3e5;
+  position: relative;
+}

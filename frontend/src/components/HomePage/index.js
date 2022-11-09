@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import backgroundVideo from '../../video/main_snowboard.mp4'
 import "./HomePage.css"
 import { Link } from "react-router-dom";
+import MenJacket from "./MenJacket";
 export default function Home(){
   
 
@@ -45,7 +46,7 @@ export default function Home(){
             <div className="category_product_nav">Casual</div>
           </Link>
         </div>
-        <section></section>
+        <MenJacket />
       </div>
     </>
   )
