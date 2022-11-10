@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import dope from "../../images/dope.png"
+import logo from "../../images/sick_logo.png"
 import CategoryDropDown from './CategoryDropDown';
 import CartIndexModal from './CartIndexModal';
 
@@ -40,7 +41,7 @@ function Navigation({showModal, setShowModal}) {
           <div className='header_space'></div>
         </div>
         <div className="sick_home">
-          <Link exact to="/" className="dope"><img className="logo" src={dope} alt=""/></Link>
+          <Link exact to="/" className="dope"><img className="logo" src={logo} alt=""/></Link>
           <nav className='gender_button_nav'>
             <ol>
               <div className='gender_link_wrapper'>

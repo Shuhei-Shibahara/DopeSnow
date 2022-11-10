@@ -7,6 +7,12 @@ import Review from "./Review.js";
 import './ProductPage.css'
 import Description from "../Description";
 import Tech from "../Tech"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper"
+import 'swiper/css';
+import 'swiper/css/navigation';
+import "swiper/css/pagination";
+
 
 const ProductPage = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
@@ -20,6 +26,13 @@ const ProductPage = ({showModal, setShowModal}) => {
   if (product === undefined){
     return null
   }
+
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
   
   const category = product.category.split('-').join(' ')
   return(
@@ -41,9 +54,15 @@ const ProductPage = ({showModal, setShowModal}) => {
                         <div className="image_container">
                        
                           {/* <img src={product.imgUrls[0]} className="main_image" /> */}
-                          <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" />
+                          {/* <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" /> */}
+          
+                          {/* <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]} className="mySwiper"> */}
+                          {/* <Swiper navigation={true} pagination={pagination} modules={[Navigation, Pagination]} className="mySwiper">
 
+                            <SwiperSlide><img src='https://www.dopesnow.com/images/H1299_01_l01JcrX.jpg?w=694&dpr=2' className="main_image" /></SwiperSlide>
+                            <SwiperSlide><img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" /></SwiperSlide>
 
+                          </Swiper> */}
 
                         </div>
                         
