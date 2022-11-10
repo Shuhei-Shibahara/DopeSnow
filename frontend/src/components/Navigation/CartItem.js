@@ -27,14 +27,14 @@ export default function CartItem({cartItem}){
     return null
   }
   
-
+ 
 
   return(
     <div className="individual_shopping_item_container">
       <div className="shopping_cart_main_photo_container">
         <Link to={`/product/${cartItem.productId}`} className='link_back_to_product'>
           <div className="inside_photo_container">
-            <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="cart_product_image" />
+            {/* <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="cart_product_image" /> */}
             <img src={cartItem.imgUrls[0]} className="cart_product_image" />
           </div>
         </Link>

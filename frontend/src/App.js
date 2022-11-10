@@ -9,6 +9,7 @@ import ProductIndexPage from './components/ProductIndexPage'
 import ProductPage from './components/ProductPage'
 import { useState } from 'react';
 import CheckOut from './components/Checkout';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
               <CheckOut />
             </Route>
           </Switch>
+        <Footer />
     </>
   );
 }

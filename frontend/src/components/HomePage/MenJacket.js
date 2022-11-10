@@ -7,7 +7,7 @@ const MenJacket = () => {
     <section className="main_homepage_jacket_container">
       <div className='homepage_jacket_content_container'>
         <div className='homepage_jacket_text_container'>
-          <div className='dope_legacy_text'>Dope Legacy</div>
+          <div className='dope_legacy_text'>Sick Legacy</div>
           <div className='men_snowboard_jacket_text'>Snowboard Jacket</div>
           <Link className='men_snowboard_link_main_page' exact to="/products/M/Mens-Snowboard-Jackets">
             <div>Men's Snowboard Jackets</div>

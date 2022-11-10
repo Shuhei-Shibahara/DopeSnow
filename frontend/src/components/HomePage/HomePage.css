@@ -10,7 +10,7 @@
 }
 
 .main_container{
-  margin: 110px 259px 0;
+  margin: 55px 110px 0;
 }
 
 .video_container{
@@ -98,10 +98,11 @@ a {
 .category_navigation_container{
   display: flex;
   justify-content: space-between;
-  margin: 0px 259px;
+  margin: 0px 110px;
 }
 
 .category_image_nav{
+  width: 450px;
   border-radius: 2%;
 }
 

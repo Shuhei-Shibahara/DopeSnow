@@ -1,0 +1,18 @@
+
+.main_footer_container{
+  display: flex;
+  justify-content: center;  
+  border-top: 1px lightgrey solid;
+  padding-top: 20px
+}
+
+.footer_icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 50px;
+}
+
+.footer_icon2 {
+  height: 50px;
+  width: 85px;
+}

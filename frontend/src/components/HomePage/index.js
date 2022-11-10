@@ -3,6 +3,7 @@ import backgroundVideo from '../../video/main_snowboard.mp4'
 import "./HomePage.css"
 import { Link } from "react-router-dom";
 import MenJacket from "./MenJacket";
+import WomenJacket from "./WomenJacket";
 export default function Home(){
   
 
@@ -40,13 +41,10 @@ export default function Home(){
             <div className="title_product_nav">Men</div>
             <div className="category_product_nav">Snow</div>
           </Link>
-          {/* <Link exact to="/products/M">
-            <img className="category_image_nav" src="https://www.dopesnow.com/images/55qIM7VquW5kNWmBtlb77u/634067ac3cac8be5bdb0b80aea78aa62/DOPE-category-800x979_0001_Men_Outdoor.jpg?w=308&dpr=1" />
-            <div className="title_product_nav">Men</div>
-            <div className="category_product_nav">Casual</div>
-          </Link> */}
+
         </div>
         <MenJacket />
+        <WomenJacket />
       </div>
     </>
   )

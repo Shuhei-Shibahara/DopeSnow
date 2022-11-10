@@ -22,6 +22,12 @@ const ReviewDisplay = ({review, productId}) => {
     }
   }
 
+  const handleShow = (e) => {
+    e.preventDefault();
+    if (user.id === review.userId){
+      setShowUpdate(true)
+    }
+  }
   const starRating = {
     size: 35,
     count: 5,
@@ -79,7 +85,7 @@ const ReviewDisplay = ({review, productId}) => {
           <div className='star_box_container'>
             <img className={`stars_${review.rating}`} />
             <div>
-              <img src={edit} height="24px" width="24px" onClick={()=>setShowUpdate(true)} />
+              <img src={edit} height="24px" width="24px" onClick={handleShow} />
               <img src={trash} onClick={() => handleDeleteReview(review)} />
             </div>
           </div>
