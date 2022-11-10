@@ -16,11 +16,12 @@ const ProductPage = ({showModal, setShowModal}) => {
   useEffect(()=>{
     dispatch(fetchProduct(id))
   },[dispatch, id])
-
+  
   if (product === undefined){
     return null
   }
-
+  
+  const category = product.category.split('-').join(' ')
   return(
     <>
       <div>
@@ -28,7 +29,7 @@ const ProductPage = ({showModal, setShowModal}) => {
           <div className='product_show_main_container'>
             <div className='product_show_main'>
               <div className="btAX" id="topnav">
-                <Link className="product_redirect" exact to={`/products/${product.gender}/${product.category}`}>{product.category}</Link>
+                <Link className="product_redirect" exact to={`/products/${product.gender}/${product.category}`}>{category}</Link>
                 &nbsp;<span>&gt;</span>&nbsp;
                 <h1 className="product_page_name">{product.name}</h1>
               </div>

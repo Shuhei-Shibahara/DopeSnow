@@ -222,6 +222,7 @@
 }
 
 .checkout_container{
+  text-align: center;
   margin-top: 40px;
   font-weight: 400;
   background-color: black;;
@@ -234,13 +235,12 @@
   font-weight: 700;
   height: 60px;
   font-family: 'Inter', sans-serif;
-  padding: 0 30px;
   display: block;
   text-decoration: none;
   outline: 0;
   border: 0;
   border-radius: 0;
-  line-height: 15px;
+  line-height: 54px;
   text-align: center;
   color: white
 }

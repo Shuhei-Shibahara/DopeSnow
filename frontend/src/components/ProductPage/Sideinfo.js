@@ -67,7 +67,10 @@ const Sideinfo = ({product, setShowModal}) => {
     setPickedSize(size);
   }
   
-
+  const titleColor = () => {
+    let newColor = pickedColor
+    return newColor.split('-').join(' ')
+  }
 
   return(
     <>
@@ -86,7 +89,7 @@ const Sideinfo = ({product, setShowModal}) => {
           </div>
         </div>
         <div className='side_bar_color_title'>Color</div>
-        <div className='side_bar_clicked_color'>{pickedColor}</div>
+        <div className='side_bar_clicked_color'>{titleColor()}</div>
         <div className='side_bar_color_circle_main'>
           <div className='side_bar_color_container'>
           {colors.map((color, i) =>

@@ -9,9 +9,6 @@ function CartIndexModal({showModal, setShowModal}) {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems)
   
-  // useEffect(() => {
-  //   dispatch(fetchCartItems())
-  // }, [dispatch])
   
   const quantity = () => {
     let total = 0;
@@ -33,7 +30,7 @@ function CartIndexModal({showModal, setShowModal}) {
       }
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CartIndex />
+          <CartIndex setShowModal={setShowModal}/>
         </Modal>
       )}
     </div>

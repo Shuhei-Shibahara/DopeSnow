@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { deleteCartItem, fetchCartItems, getCartItems } from "../../store/cartItems";
 import './CartIndex.css'
 import CartItem from "./CartItem";
 
-function CartIndex() {
+function CartIndex({setShowModal}) {
   const dispatch = useDispatch();
   const items = useSelector(getCartItems)
   const user = useSelector(state => state.session.user)
@@ -26,8 +27,8 @@ function CartIndex() {
     while (items.length > 0){
       let item = items.pop()
       dispatch(deleteCartItem(item.id))
-
     }
+    setShowModal(false)
   }
 
 
@@ -55,9 +56,12 @@ function CartIndex() {
               </div>
             </div>
           </div>
-          <div className='checkout_container'>
-            <button onClick={handleCheckout} className="checkout_button">Checkout</button>
-          </div>
+          { items.length > 0 &&
+            <div className='checkout_container'>
+              <Link to='/checkout' onClick={handleCheckout} className="checkout_button">Checkout</Link>
+            </div>
+
+          }
         </div>
       </div>
     </>

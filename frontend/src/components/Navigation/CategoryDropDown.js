@@ -103,7 +103,7 @@ const CategoryDropDown= ({gender}) => {
               </li>
               <li>
                 <div className="div_individual_category">
-                  <Link to="/products/w/Womens-Hoddies" className="category_link">
+                  <Link to="/products/W/Womens-Hoddies" className="category_link">
                     <div className="image_div">
                       <img
                         className="category_image"

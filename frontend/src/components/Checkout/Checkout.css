@@ -7,3 +7,31 @@
   margin-top: 50px;
   border-top: 1px lightgrey solid;
 }
+
+.checkout_title_div{
+  display: flex;
+  justify-content: center;
+}
+
+.checkout_title_container{
+  position: absolute;
+  margin-top: 20px;
+  top: 190px;
+}
+
+.checkout_text{
+  font-family: 'inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checkout_image{
+  margin-top: 30px;
+  height: 800px
+}
+
+.bottom_text{
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+}
