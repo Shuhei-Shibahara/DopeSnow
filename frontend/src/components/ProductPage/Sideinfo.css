@@ -56,6 +56,7 @@ ul{
 .side_bar_review_styling{
   display: inline-block;
   margin-right: 0;
+  cursor: pointer;
 }
 
 .review_star_image{

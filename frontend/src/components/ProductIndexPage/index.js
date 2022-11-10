@@ -23,8 +23,8 @@ export default function ProductIndex(){
               <Link to={`/product/${product.id}`} className="individual_product">
                 <div className="individual_product_image_container">
                   <div className="image_container_spacing"> 
-                  {/* <img src={product.imgUrls[0]} className="product_main_image" /> */}
-                  <img src={"https://sick-snow.s3.us-west-2.amazonaws.com/Screen+Shot+2022-11-01+at+9.24.02+AM.png"} className="product_main_image"/>
+                  <img src={product.imgUrls[0]} className="product_main_image" />
+                  {/* <img src={"https://sick-snow.s3.us-west-2.amazonaws.com/Screen+Shot+2022-11-01+at+9.24.02+AM.png"} className="product_main_image"/> */}
                   </div>
                 </div>
               <div className="product_text_whole_container">

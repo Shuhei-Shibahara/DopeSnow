@@ -16,6 +16,9 @@ const Review = ({productId}) => {
 
   const average = () =>{
     let total = 0
+    if (!reviews.length){
+      return 5.0.toFixed(1)
+    } 
     reviews.forEach(review => {
       total += review.rating
     })

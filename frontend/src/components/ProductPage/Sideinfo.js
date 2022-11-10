@@ -1,12 +1,12 @@
 import './Sideinfo.css'
 import star from "../../images/star.png"
 import favorite from '../../images/favorite_icon.png'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createCartItem, updateCartItem, getCartItems } from '../../store/cartItems'
 import { Link } from 'react-router-dom'
 
-const Sideinfo = ({product, setShowModal}) => {
+const Sideinfo = ({product, setShowModal, setImageShown, reviewsRef}) => {
   const dispatch = useDispatch();
   const colors = product.color.split(' ') 
   const sizes = product.size.split(' ')
@@ -58,6 +58,7 @@ const Sideinfo = ({product, setShowModal}) => {
   const handleColorChange = (color, i) => (e) => {
     e.preventDefault();
     setSelectedColor(i);
+    setImageShown(i);
     setPickedColor(color);
   }
 
@@ -79,13 +80,13 @@ const Sideinfo = ({product, setShowModal}) => {
           <div className="side_bar_name">{wordReplace()}</div>
           <div className="side_bar_logo">Sick</div>
           <div className="side_bar_review_main_container">
-            <Link to='/' className='side_bar_review_styling'>
+            <div onClick={() => reviewsRef.current?.scrollIntoView({behavior: 'smooth'})} className='side_bar_review_styling'>
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
               <img src={star} className="review_star_image" />
-            </Link>
+            </div>
           </div>
         </div>
         <div className='side_bar_color_title'>Color</div>
@@ -98,8 +99,8 @@ const Sideinfo = ({product, setShowModal}) => {
                 <button onClick={handleColorChange(color, i)} className='future_onclick_for_color'>
                   <div className={`color_image_styling ${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}>
                   {/* <div className={`color_image_styling_${parseInt(i) === selectedColor ? 'selected_color' : ''}`} id={`color-${i}`} key={i}> */}
-                    {/* <img src={product.imgUrls[i]} className='color_image' title={color} /> */}
-                  <img src='https://www.dopesnow.com/images/H0857_06_OAnp3GT.jpg?w=525&dpr=2' className='color_image' title={color} />
+                    <img src={product.imgUrls[i]} className='color_image' title={color} />
+                  {/* <img src='https://www.dopesnow.com/images/H0857_06_OAnp3GT.jpg?w=525&dpr=2' className='color_image' title={color} /> */}
                   </div>
                 </button>
                 <div className='check_mark'></div>

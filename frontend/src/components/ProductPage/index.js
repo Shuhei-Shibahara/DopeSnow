@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchProduct } from "../../store/products";
@@ -18,6 +18,8 @@ const ProductPage = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const product = useSelector(state => state.products[id])
+  const [imageShown, setImageShown] = useState(0)
+  const reviewsRef = useRef(null)
   
   useEffect(()=>{
     dispatch(fetchProduct(id))
@@ -53,7 +55,7 @@ const ProductPage = ({showModal, setShowModal}) => {
                       <div className="change_image_div">
                         <div className="image_container">
                        
-                          {/* <img src={product.imgUrls[0]} className="main_image" /> */}
+                          <img src={product.imgUrls[imageShown]} className="main_image" />
                           {/* <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" /> */}
           
                           {/* <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]} className="mySwiper"> */}
@@ -75,11 +77,13 @@ const ProductPage = ({showModal, setShowModal}) => {
             </div>
           </div>
         </div>
-        <Sideinfo product={product} showModal={showModal} setShowModal={setShowModal} />
+        <Sideinfo reviewsRef={reviewsRef} product={product} showModal={showModal} setShowModal={setShowModal} setImageShown={setImageShown} />
       </div>
       <Description product={product}/>
       <Tech />
-      <Review productId={product.id} />  
+      <div ref={reviewsRef}>
+        <Review productId={product.id} />  
+      </div>
     </>
   )
 }

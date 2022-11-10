@@ -12,7 +12,7 @@ ActiveRecord::Base.transaction do
   
   puts "Creating users..."
   puts "Creating products..."
- ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('users')
   ApplicationRecord.connection.reset_pk_sequence!('products')
 
 
@@ -25,7 +25,6 @@ ActiveRecord::Base.transaction do
   fifi = User.create!(email: "cssGoat@mail.com", name: "Fifi", password: 'password')
   shaun = User.create!(email: "sWhite@mail.com", name: "Shaun", password: 'password')
 
-  end
 
   #mens
   product1 = Product.create!({
