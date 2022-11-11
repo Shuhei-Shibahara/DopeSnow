@@ -38,7 +38,7 @@ function CartIndex({setShowModal}) {
     <>
       <div className="main_cart_index_container">
         <div className="main_cart_text_container">
-          <button className="close_button"></button>
+          <button onClick={()=>setShowModal(false)} className="close_button"></button>
           <header className="inside_cart_text_container">
             <div className="shopping_bag_text">Shopping Bag</div>
             <div className="always_free_text">Shipping is always free</div>

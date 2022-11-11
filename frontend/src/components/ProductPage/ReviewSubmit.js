@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview, fetchReviews } from "../../store/reviews";
+import './ReviewSubmit.css'
 
 const ReviewSubmit = ({productId}) => {
   const [rating, setRating] = useState(5);
@@ -55,13 +56,15 @@ const ReviewSubmit = ({productId}) => {
                   </div>
                 </div>
               <form onSubmit={handleNewReview}>
-                <div className='review_author_container'>
-                  <input className='review_author_text' type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
+                {/* <div className='review_author_container'>
+                  <input className='review_title' type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
+                </div> */}
+                <div className="review_submit_body_container">
+                  <div className='review_body_container'>
+                    <textarea className="review_main_text" placeholder="Write a review" rows="4" cols="50" onChange={(e) => setBody(e.target.value)} />
+                  </div>
+                  <button class="review_button">Submit</button>
                 </div>
-                <div className='review_body_container'>
-                  <textarea className="review_main_text" placeholder="Write a review" rows="4" cols="50" onChange={(e) => setBody(e.target.value)} />
-                </div>
-                <button class="side_bar_shopping_cart_button">Submit</button>
               </form>
               </header>
             </section>

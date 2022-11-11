@@ -242,10 +242,6 @@ ul{
   font-size: 14px;
   transition: opacity .2s ease-in-out;
   text-decoration: none;
-  outline: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
   display: inline-block;
   height: 50px;
   line-height: 50px;

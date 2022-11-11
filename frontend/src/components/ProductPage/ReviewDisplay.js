@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import edit from '../../images/edit.png'
 import trash from '../../images/trash.png'
 import { deleteReview, fetchReviews, updateReview } from '../../store/reviews';
-
+import './ReviewSubmit.css'
 
 
 const ReviewDisplay = ({review, productId}) => {
@@ -69,13 +69,17 @@ const ReviewDisplay = ({review, productId}) => {
           </div>
         </div>
         <form onSubmit={handleUpdateReview}>
-          <div className='review_author_container'>
+          {/* <div className='review_author_container'>
             <input className='review_author_text' type="text" onChange={(e) => setTitle(e.target.value)} value={review.title}/>
+          </div> */}                
+          <div className="review_submit_body_container2">
+            <div className='review_body_container2'>
+            <textarea className="review_main_text" type='text' rows="4" cols="50"onChange={handleBodyChange} value={body}/>
+              {/* <textarea className="review_main_text" placeholder="Write a review" rows="4" cols="50" onChange={(e) => setBody(e.target.value)} /> */}
+
+            </div>
+            <button class="review_button">Submit</button>
           </div>
-          <div className='review_body_container'>
-          <input className="review_main_text" type='text' onChange={handleBodyChange} value={body}/>
-          </div>
-          <button class="side_bar_shopping_cart_button">Submit</button>
         </form>
       </section>  
     </>

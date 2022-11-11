@@ -38,7 +38,7 @@ function ProfileButton({ user }) {
           <Link className='profile_button' onClick={openMenu}>PROFILE</Link>
         {showMenu && (
           <div className="profile_dropdown">
-            <Link to="/cart">CART</Link>
+            {/* <Link to="/cart">CART</Link> */}
             <Link to="/" onClick={logout}>LOG OUT</Link>
           </div>
         )}
