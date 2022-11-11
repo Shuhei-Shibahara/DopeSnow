@@ -1,8 +1,8 @@
 
 .drop-down-container{
   display: none;
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 40px;
   z-index: 90;
   left: 0;
   right: 0;
@@ -87,19 +87,6 @@
   min-height: 100%;
   object-fit: cover;
   border-radius: 20px;
-}
-
-.category_image_test {
-  width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-}
-
-.drop-down_test {
-  display: flex;
-  max-width: 1514;
-  margin: 0 auto;
-  background-color: hsl(0, 0%, 100%);
 }
 
 .category_name{
