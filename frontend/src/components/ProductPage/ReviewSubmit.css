@@ -34,11 +34,11 @@
     width: 100%;
   }
 
-     .review_submit_body_container2 {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       margin-top: 20px;
-     }
+  .review_submit_body_container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
 
   

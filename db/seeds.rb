@@ -5,15 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
 
-ActiveRecord::Base.transaction do
+  CartItem.destroy_all
+  Review.destroy_all
   User.destroy_all
   Product.destroy_all
   
   puts "Creating users..."
   puts "Creating products..."
+  puts "Creating reviews..."
   ApplicationRecord.connection.reset_pk_sequence!('users')
   ApplicationRecord.connection.reset_pk_sequence!('products')
+  ApplicationRecord.connection.reset_pk_sequence!('reviews')
+
 
 
   shuhei = User.create!(email: "wipeout@mail.com", name: "Shuhei", password: 'password')
@@ -461,6 +466,101 @@ ActiveRecord::Base.transaction do
   # product24.photos.attach([{io: range1_grape1_w_hoodie , filename: 'product24_grape1.png'},{io: range2_grape2_w_hoodie , filename: 'product24_grape2.png'}, {io: range3_grape3_w_hoodie , filename: 'product24_grape3.png'},{io: range4_grape4_w_hoodie , filename: 'product24_grape4.png'}])
   product24.photos.attach([{io: range1_grape1_w_hoodie , filename: 'product24_grape1.png'}])
 
+  #reviews
 
+  r1 = Review.create!({
+    body: "I love this product",
+    user_id: 1, 
+    product_id: 3,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r2 = Review.create!({
+    body: "Size came a little smaller",
+    user_id: 5, 
+    product_id: 3,
+    title: "small product",
+    rating: 4,
+  })
+
+  r3 = Review.create!({
+    body: "I love this product",
+    user_id: 8, 
+    product_id: 6,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r4 = Review.create!({
+    body: "I love this product",
+    user_id: 3, 
+    product_id: 2,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r5 = Review.create!({
+    body: "I love this product",
+    user_id: 6, 
+    product_id: 22,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r6 = Review.create!({
+    body: "I love this product",
+    user_id: 5, 
+    product_id: 24,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r7 = Review.create!({
+    body: "Survived a blizzard with this",
+    user_id: 6, 
+    product_id: 3,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r8 = Review.create!({
+    body: "Got way too hot when I wore it in the summer",
+    user_id: 4, 
+    product_id: 3,
+    title: "cool product",
+    rating: 1,
+  })
+
+  r9 = Review.create!({
+    body: "I love this product",
+    user_id: 5, 
+    product_id: 15,
+    title: "cool product",
+    rating: 4,
+  })
+
+  r10 = Review.create!({
+    body: "Wish they'd make this in different colors",
+    user_id: 1, 
+    product_id:11,
+    title: "color product",
+    rating: 4,
+  })
+
+  r11 = Review.create!({
+    body: "I love this product",
+    user_id: 6, 
+    product_id: 18,
+    title: "cool product",
+    rating: 5,
+  })
+
+  r12 = Review.create!({
+    body: "Got a lot of compliments on the mountain",
+    user_id: 1, 
+    product_id: 7,
+    title: "best product",
+    rating: 5,
+  })
   puts 'done'
-end

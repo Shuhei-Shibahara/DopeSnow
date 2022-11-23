@@ -27,7 +27,7 @@ export default function CartItem({cartItem}){
     return null
   }
   
- 
+  const colorName = cartItem.color.split('-').join(' ')
 
   return(
     <div className="individual_shopping_item_container">
