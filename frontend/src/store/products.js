@@ -30,6 +30,18 @@ export const fetchProduct = (cartId,productId) => async dispatch => {
   }
 }
 
+export const fetchProductsBySearch = (query) => async (dispatch) => {
+  const res = await csrfFetch(`/api/search?query=${query}`)
+  if (res.ok) {
+    const newProducts = await res.json();
+    dispatch(receiveProducts(newProducts))
+  }
+}
+
+export const getProducts = (state) => {
+  return state.products ? Object.values(state.products) : []
+}
+
 export default function productsReducer(state = {}, action){
   Object.freeze(state);
   const nextState = {...state};

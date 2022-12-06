@@ -42,6 +42,14 @@ class Api::ProductsController < ApplicationController
     
   end 
 
+  def search
+    @products ||= Product.where("name ILIKE ?", "%#{params[:query]}%")
+    if (@products.empty?)
+      @products ||= Product.all
+    end
+    render "/api/products/index"
+  end
+
   def show
     @product = Product.find_by_id(params[:id])
     render :show
