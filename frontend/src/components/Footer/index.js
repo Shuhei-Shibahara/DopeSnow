@@ -1,7 +1,7 @@
 import linkedIn from '../../images/linkedIn_img.png'
 import GitHub from '../../images/GitHub-logo.png'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+
 const Footer = () => {
 
   return(
