@@ -1,7 +1,13 @@
 import csrfFetch from "./csrf"
 
 const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
-const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT'
+const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
+const SET_PRODUCTS = 'products/SET_PRODUCTS';
+
+export const setProducts = payload => ({
+  type: SET_PRODUCTS,
+  payload
+})
 
 export const receiveProducts = products => ({
   type: RECEIVE_PRODUCTS,
@@ -30,11 +36,13 @@ export const fetchProduct = (cartId,productId) => async dispatch => {
   }
 }
 
-export const fetchProductsBySearch = (query) => async (dispatch) => {
-  const res = await csrfFetch(`/api/search?query=${query}`)
+export const searchProducts = (query) => async dispatch => {
+  const res = await csrfFetch(`/api/products/search/${query}`)
+  if (res.status >= 400) throw res;
+
   if (res.ok) {
-    const newProducts = await res.json();
-    dispatch(receiveProducts(newProducts))
+    const data = await res.json();
+    dispatch(receiveProducts(data));
   }
 }
 

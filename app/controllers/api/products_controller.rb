@@ -47,7 +47,7 @@ class Api::ProductsController < ApplicationController
     if (@products.empty?)
       @products ||= Product.all
     end
-    render "/api/products/index"
+    render :index
   end
 
   def show

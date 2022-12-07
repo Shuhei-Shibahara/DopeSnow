@@ -10,6 +10,7 @@ import ProductPage from './components/ProductPage'
 import { useState } from 'react';
 import CheckOut from './components/Checkout';
 import Footer from './components/Footer';
+import SearchIndex from './components/SearchBar/SearchIndex';
 
 function App() {
 
@@ -22,7 +23,6 @@ function App() {
             <Route exact path="/">
               <HomePage />
             </Route>
-
             <Route path="/login" >
               <LoginFormPage />
             </Route> 
@@ -54,6 +54,11 @@ function App() {
             <Route path="/checkout">
               <CheckOut />
             </Route>
+
+            <Route exact path="/search">
+              <SearchIndex />
+            </Route>
+
           </Switch>
         <Footer />
     </>
