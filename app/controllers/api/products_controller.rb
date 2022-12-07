@@ -43,10 +43,7 @@ class Api::ProductsController < ApplicationController
   end 
 
   def search
-    @products ||= Product.where("name ILIKE ?", "%#{params[:query]}%")
-    if (@products.empty?)
-      @products ||= Product.all
-    end
+    @products = Product.where('name ILIKE (?)', "%#{params[:query]}%")
     render :index
   end
 

@@ -14,9 +14,10 @@ const SearchIndex = () => {
     searchResults = (
       <>
         <ul className="search-result-list">
+          {/* {console.log(products)}
           {products.map(product =>
             <li><ProductIndex key={product.id} product={product} /></li>
-          )}
+          )} */}
         </ul>
       </>
     )

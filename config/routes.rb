@@ -8,11 +8,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
 
     resources :products, only: [:show, :index] do 
-      resources :reviews, only: [:index]
-      collection do
-        get 'search/:query', to: "products#search", as: "search"
-      end
+      resources :reviews, only: [:index]      
     end
+    get '/products/search/:query', to: 'products#search'
+    
 
     resource :session, only: [:show, :create, :destroy]
 
