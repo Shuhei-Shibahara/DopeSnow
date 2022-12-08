@@ -6,46 +6,43 @@ import { useHistory } from "react-router-dom";
 import { CiSearch } from 'react-icons/ci';
 
 
-
 const SearchBar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [query, setQuery] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const history = useHistory();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(query)
     dispatch(searchProducts(query));
-    // history.push("/search");
-    setShowSearch(false);
+    history.push("/search");
+    setShowSearchBar(false);
     setQuery("");
   }
 
   const handleSearchBar = (e) => {
-    if (showSearch) {
-      setShowSearch(false)
+    if (showSearchBar) {
+      setShowSearchBar(false)
     } else {
-      setShowSearch(true)
+      setShowSearchBar(true)
     }
   }
 
   return (
     <>
-      {showSearch ?
+      {showSearchBar ?
         <form className="search-form" onSubmit={handleSubmit}>
           <input
             id="search-input"
-            placeholder="Search products"
+            placeholder="Search"
             value={query}
             onChange={e => setQuery(e.target.value)}
-            // autoFocus="autofocus" 
             />
         </form> : ""
       }
 
-      <button type="submit" className="fa-solid fa-magnifying-glass" id="search-icon" onClick={handleSearchBar}><CiSearch /></button>
+      <button type="submit" id="search-icon" onClick={handleSearchBar}><CiSearch size={25}/></button>
     </>
   )
 }

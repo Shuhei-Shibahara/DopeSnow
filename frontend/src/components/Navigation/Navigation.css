@@ -187,6 +187,7 @@ img.logo{
 }
 
 .nav_button {
+  display: flex;
   text-decoration: none;
   color: hsl(0, 0%, 17.65%);
 }
