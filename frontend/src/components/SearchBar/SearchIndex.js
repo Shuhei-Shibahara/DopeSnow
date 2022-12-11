@@ -10,13 +10,13 @@ const SearchIndex = () => {
     window.scrollTo(0, 0)
   }
 
-  let searchResults;
+  let resultList;
   if (products.length === 0) {
-    searchResults = (
+    resultList = (
       <div className="search-error">Oops... There was no match found</div>
     )
   } else {
-    searchResults = (
+    resultList = (
       <>
         <ul className="search-result-list">
           {products.map(product =>
@@ -46,8 +46,8 @@ const SearchIndex = () => {
   }
 
   return (
-    <>  <h1 id="search-header">Matching Results</h1>
-      {searchResults}
+    <>  <h1 className="search-header">Matching Results</h1>
+      {resultList}
     </>
   )
 }

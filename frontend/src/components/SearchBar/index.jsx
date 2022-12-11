@@ -32,17 +32,17 @@ const SearchBar = () => {
   return (
     <>
       {showSearchBar ?
-        <form className="search-form" onSubmit={handleSubmit}>
+        <form className="searchbar-form" onSubmit={handleSubmit}>
           <input
-            id="search-input"
-            placeholder="Search"
+            className="searchbar-input"
             value={query}
+            placeholder="Search"
             onChange={e => setQuery(e.target.value)}
             />
         </form> : ""
       }
 
-      <button type="submit" id="search-icon" onClick={handleSearchBar}><CiSearch size={25}/></button>
+      <button type="submit" className="searchbar-icon" onClick={handleSearchBar}><CiSearch size={25}/></button>
     </>
   )
 }
