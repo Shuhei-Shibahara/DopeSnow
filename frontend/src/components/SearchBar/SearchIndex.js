@@ -20,7 +20,7 @@ const SearchIndex = () => {
       <>
         <ul className="search-result-list">
           {products.map(product =>
-            <article className="indiviual_product_container">
+            <section className="indiviual_product_container">
               <div onClick={scrollToTop}>
                 <Link to={`/product/${product.id}`} className="individual_product">
                   <div className="individual_product_image_container">
@@ -38,7 +38,7 @@ const SearchIndex = () => {
 
               </div>
 
-            </article>
+            </section>
           )}
         </ul>
       </>
