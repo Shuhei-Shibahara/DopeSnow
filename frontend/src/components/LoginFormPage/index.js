@@ -21,6 +21,7 @@ function LoginForm() {
   },[sessionUser])
   
   if (sessionUser) return <Redirect to="/" />;
+
   const handleSubmit = (e) => {
    
     e.preventDefault();
@@ -39,6 +40,7 @@ function LoginForm() {
         else setErrors([res.statusText]);
       });
   };
+  
   const handleDemo = (e) => {
     e.preventDefault();
 
