@@ -6,7 +6,6 @@
   outline: none;
   padding: 5px;
   height: 20px;
-  /* text-transform: uppercase; */
   letter-spacing: 0.03em;
   margin-right: 5px;
   text-align: center;
@@ -19,7 +18,7 @@
 
 .search-result-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 90%;
   column-gap: 24px;
   padding-left: 5%;
