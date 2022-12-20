@@ -74,7 +74,7 @@ const ReviewDisplay = ({review, productId}) => {
     // dispatch(fetchReviews(productId))
   }
 
-  const toggleMenu = (user.id === review.userId) ? (
+  const toggleMenu = (user && user.id === review.userId) ? (
     <div>
       <img src={edit} height="24px" width="24px" onClick={handleShow} />
       <img src={trash} onClick={() => handleDeleteReview(review)} />
@@ -103,8 +103,6 @@ const ReviewDisplay = ({review, productId}) => {
           <div className="review_submit_body_container2">
             <div className='review_body_container2'>
             <textarea className="review_main_text" type='text' rows="4" cols="50"onChange={handleBodyChange} value={body}/>
-              {/* <textarea className="review_main_text" placeholder="Write a review" rows="4" cols="50" onChange={(e) => setBody(e.target.value)} /> */}
-
             </div>
             <button class="review_button">Submit</button>
           </div>
@@ -113,15 +111,12 @@ const ReviewDisplay = ({review, productId}) => {
     </>
   ) : (
       <section className='individual_review_main_container'>
-        <ul className="error_message">
-          {console.log(errors)}
-          {/* {errors.map(error => <li key={error}>{error}</li>)} */}
-        </ul>
         <header className='container_for_stars'>
           <div className='star_box_container'>
             <img className={`stars_${review.rating}`} />
-            {toggleMenu}
-          
+            {(user) ? (toggleMenu) : (
+             <div> </div>
+            )}
           </div>
         </header>
         <div className='review_body_container'>
