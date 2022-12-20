@@ -63,7 +63,7 @@ function Navigation({showModal, setShowModal}) {
             <button className="nav_button">
              <SearchBar />
             </button>            
-            <CartIndexModal showModal={showModal} setShowModal={setShowModal}/>
+            <CartIndexModal showModal={showModal} setShowModal={setShowModal} user={sessionUser}/>
 
           </div>
         </div>

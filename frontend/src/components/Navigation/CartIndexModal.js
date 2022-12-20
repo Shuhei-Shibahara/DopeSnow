@@ -4,10 +4,12 @@ import { Modal } from '../../context/Modal';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import CartIndex from './CartIndex';
 import basket from '../../images/shopping_basket.png'
+import { useHistory } from 'react-router-dom';
 
-function CartIndexModal({showModal, setShowModal}) {
+function CartIndexModal({showModal, setShowModal, user}) {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems)
+  const history = useHistory();
   
   
   const quantity = () => {
@@ -17,12 +19,17 @@ function CartIndexModal({showModal, setShowModal}) {
     })
     return total 
   }
- 
+  
+  const checkUser = (e) => (user) ? (
+    setShowModal(true)
+  ) : (
+    history.push('/login')
+  )
 
   return (
     <>
     <div>
-      <button className="nav_button_cart" onClick={() => setShowModal(true)} >
+      <button className="nav_button_cart" onClick={checkUser} >
           <img src={basket} width="26" height="26" />
       </button>
       {cartItems.length !== 0 &&
