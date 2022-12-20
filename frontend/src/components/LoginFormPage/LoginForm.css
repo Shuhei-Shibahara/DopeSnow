@@ -1,4 +1,10 @@
-.error_message{
+.error_message>li{
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
+  color: red;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+
 }

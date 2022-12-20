@@ -7,6 +7,7 @@ import { deleteReview, fetchReviews, updateReview } from '../../store/reviews';
 import './ReviewSubmit.css'
 
 
+
 const ReviewDisplay = ({review, productId}) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState(review.title)
@@ -15,6 +16,7 @@ const ReviewDisplay = ({review, productId}) => {
   const [showUpdate, setShowUpdate] = useState(false)
   const [errors, setErrors] = useState([]);
   const user = useSelector(state => state.session.user)
+
 
 
   const handleDeleteReview = (review) => {
@@ -53,26 +55,33 @@ const ReviewDisplay = ({review, productId}) => {
       product_id: productId
     }
 
-    // setErrors([]);
-    // return dispatch(updateReview(updatedReview))
-    //   .catch(async (res) => {
-    //     let data;
-    //     try {
-    //       // .clone() essentially allows you to read the response body twiceL
-    //       data = await res.clone().json();
-    //     } catch {
-      //       data = await res.text(); // Will hit this case if, e.g., server is down
-      //     }
-      //     if (data?.errors) setErrors(data.errors);
-      //     else if (data) setErrors([data]);
-      //     else setErrors([res.statusText]);
-      //   });
-    dispatch(updateReview(updatedReview))
-    setShowUpdate(false)
+    setErrors([]);
+    return dispatch(updateReview(updatedReview))
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twiceL
+          data = await res.clone().json();
+        } catch {
+            data = await res.text(); // Will hit this case if, e.g., server is down
+          }
+          if (data?.errors) setErrors(data.errors);
+          else if (data) setErrors([data]);
+          else setErrors([res.statusText]);
+        });
+    // dispatch(updateReview(updatedReview))
+    // setShowUpdate(false)
     // dispatch(fetchReviews(productId))
   }
 
-
+  const toggleMenu = (user.id === review.userId) ? (
+    <div>
+      <img src={edit} height="24px" width="24px" onClick={handleShow} />
+      <img src={trash} onClick={() => handleDeleteReview(review)} />
+    </div>
+  ) : (
+    <div></div>
+  )
 
   return showUpdate ? (
     <>
@@ -85,9 +94,12 @@ const ReviewDisplay = ({review, productId}) => {
           </div>
         </div>
         <form onSubmit={handleUpdateReview}>
-          {/* <div className='review_author_container'>
+          <ul className="error_message">
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+          <div className='review_author_container'>
             <input className='review_author_text' type="text" onChange={(e) => setTitle(e.target.value)} value={review.title}/>
-          </div> */}                
+          </div>                
           <div className="review_submit_body_container2">
             <div className='review_body_container2'>
             <textarea className="review_main_text" type='text' rows="4" cols="50"onChange={handleBodyChange} value={body}/>
@@ -108,10 +120,8 @@ const ReviewDisplay = ({review, productId}) => {
         <header className='container_for_stars'>
           <div className='star_box_container'>
             <img className={`stars_${review.rating}`} />
-            <div>
-              <img src={edit} height="24px" width="24px" onClick={handleShow} />
-              <img src={trash} onClick={() => handleDeleteReview(review)} />
-            </div>
+            {toggleMenu}
+          
           </div>
         </header>
         <div className='review_body_container'>
