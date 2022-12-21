@@ -13,7 +13,7 @@ const Review = ({productId}) => {
   const dispatch = useDispatch();
   const reviews = useSelector(getReviews)
   const user = useSelector(state => state.session.user)
-
+  
   const average = () =>{
     let total = 0
     if (!reviews.length){

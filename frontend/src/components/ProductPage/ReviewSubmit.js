@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview, fetchReviews } from "../../store/reviews";
+import { useHistory } from 'react-router-dom';
 import './ReviewSubmit.css'
 
 const ReviewSubmit = ({productId}) => {
   const [rating, setRating] = useState(5);
   const [body, setBody] = useState();
   const [title, setTitle] = useState('Title');
+  const [errors, setErrors] = useState([]);
   const user = useSelector(state => state.session.user)
+  const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(()=>{
@@ -30,15 +33,40 @@ const ReviewSubmit = ({productId}) => {
   const handleNewReview = (e) => {
     e.preventDefault();
     
-    const newReview = {
-      body: body,
-      title: title,
-      rating: rating,
-      user_id: user.id,
-      product_id: productId
+    if (user){
+      const newReview = {
+        body: body,
+        title: title,
+        rating: rating,
+        user_id: user.id,
+        product_id: productId
+      }
+      
+      e.target.reset();
+      setBody('');
+      setRating(5);
+      setTitle('Title')
+      setErrors([]);
+      return dispatch(createReview(newReview))
+        .catch(async (res) => {
+          let data;
+          try {
+            // .clone() essentially allows you to read the response body twiceL
+            data = await res.clone().json();
+          } catch {
+            data = await res.text(); // Will hit this case if, e.g., server is down
+          }
+          if (data?.errors) setErrors(data.errors);
+          else if (data) setErrors([data]);
+          else setErrors([res.statusText]);
+  
+        });
+    } else {
+      console.log('hi')
+      history.push('/login')
     }
-    dispatch(createReview(newReview))
-    e.target.reset();
+    
+    
   }
 
   return(
@@ -55,10 +83,10 @@ const ReviewSubmit = ({productId}) => {
                     </div>
                   </div>
                 </div>
+              <ul className="error_message">
+                {errors.map(error => <li key={error}>{error}</li>)}
+              </ul>
               <form onSubmit={handleNewReview}>
-                {/* <div className='review_author_container'>
-                  <input className='review_title' type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
-                </div> */}
                 <div className="review_submit_body_container">
                   <div className='review_body_container'>
                     <textarea className="review_main_text" placeholder="Write a review" rows="4" cols="50" onChange={(e) => setBody(e.target.value)} />
