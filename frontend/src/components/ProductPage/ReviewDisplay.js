@@ -60,18 +60,15 @@ const ReviewDisplay = ({review, productId}) => {
       .catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twiceL
           data = await res.clone().json();
         } catch {
-            data = await res.text(); // Will hit this case if, e.g., server is down
+            data = await res.text(); 
           }
           if (data?.errors) setErrors(data.errors);
           else if (data) setErrors([data]);
           else setErrors([res.statusText]);
         });
-    // dispatch(updateReview(updatedReview))
-    // setShowUpdate(false)
-    // dispatch(fetchReviews(productId))
+ 
   }
 
   const toggleMenu = (user && user.id === review.userId) ? (

@@ -56,15 +56,6 @@ const ProductPage = ({showModal, setShowModal}) => {
                         <div className="image_container">
                        
                           <img src={product.imgUrls[imageShown]} className="main_image" />
-                          {/* <img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" /> */}
-          
-                          {/* <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]} className="mySwiper"> */}
-                          {/* <Swiper navigation={true} pagination={pagination} modules={[Navigation, Pagination]} className="mySwiper">
-
-                            <SwiperSlide><img src='https://www.dopesnow.com/images/H1299_01_l01JcrX.jpg?w=694&dpr=2' className="main_image" /></SwiperSlide>
-                            <SwiperSlide><img src='https://www.dopesnow.com/images/H1274_01_PwpQrhH.jpg?w=368&dpr=2' className="main_image" /></SwiperSlide>
-
-                          </Swiper> */}
 
                         </div>
                         

@@ -88,7 +88,7 @@ const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
    
-      return { ...state, user: action.user }; //{ user:{email:"sdasd", password:"asfasfa"} , }
+      return { ...state, user: action.user };
     case REMOVE_USER:
       return { ...state, user: null };
     default:

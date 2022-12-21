@@ -62,7 +62,6 @@ const ReviewSubmit = ({productId}) => {
   
         });
     } else {
-      console.log('hi')
       history.push('/login')
     }
     
